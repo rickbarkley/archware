@@ -1,19 +1,131 @@
+<script language="JavaScript1.1">
+<!--
 
-<div class="logob span11">
-	</div>
+/*
+JavaScript Image slideshow:
+By JavaScript Kit (www.javascriptkit.com)
+Over 200+ free JavaScript here!
+*/
 
-<div class="logo span8">
-		<%= image_tag("eplanbookheader2.png") %><br /><br /><br />
+var slideimages=new Array()
+var slidelinks=new Array()
+function slideshowimages(){
+for (i=0;i<slideshowimages.arguments.length;i++){
+slideimages[i]=new Image()
+slideimages[i].src=slideshowimages.arguments[i]
+}
+}
+
+function slideshowlinks(){
+for (i=0;i<slideshowlinks.arguments.length;i++)
+slidelinks[i]=slideshowlinks.arguments[i]
+}
+
+function gotoshow(){
+if (!window.winslide||winslide.closed)
+winslide=window.open(slidelinks[whichlink])
+else
+winslide.location=slidelinks[whichlink]
+winslide.focus()
+}
+
+//-->
+</script>
+
+
+<div class="logo span3">
+		<%= image_tag("archwre2.png", :align => 'left') %><br /><br />
 		</div>
+	
+		<div class="heading span11">
+		<h3>Welcome to architectWare...Your next custom home starts here.</h3><br />
+		</div>
+
+<!--		
 <div class="seo span2">
 
-	<%= link_to image_tag("twitter.png", :align => 'right'), "https://twitter.com/" %>
-	<%= link_to image_tag("facebook.png", :align => 'right'), "https://www.facebook.com/pages/Venture-Four-Architects-Inc/104407431124" %>
+	<%= link_to image_tag("twitter.png", :align => 'right'), "https://twitter.com/nuvolanetworks" %>
+	<%= link_to image_tag("facebook.png", :align => 'right'), "https://www.facebook.com/pages/nuvola-netwroks.com" %>
 	<%= link_to image_tag("linkedin.png", :align => 'right'), "http://www.linkedin.com/" %>
 </div>
+//-->
+<div class="reset span12"></div>
+
+<div class="home-top1 span2">
+<img src="/assets/BlueArchitect.jpg">
+<h4><%= link_to "Search for Custom Plans", plans_path %></h4>
+<p><span>Search our database of over 1000 plans</span></p>
+<p>Don't settle for what "Almost" works.  with our extensive plan listing you are sure to find exactly what you need</p>
+</div>
+
+<div class="home-top1 span2">
+<img src="/assets/BlueArchitect.jpg">
+<h4><%= link_to "Contact an Architect", plans_path %></h4>
+<p><span>Have a question about a plan?</span></p>
+<p>We can put you in contact with the plan's designer and make sure ALL your questions are answered.</p>
+</div>
+<div class="home-top1 span2">
+<img src="/assets/BlueArchitect.jpg">
+<h4><%= link_to "Purchase a plan", plans_path %></h4>
+<p><span>Save by purchasing a completed plan</span></p>
+<p>Build the exact custom home you want in the price range you can afford. <%= link_to "Click for more details", contact_path %></p>
+
+</div>
+<br /><br />
+<div class="popular span5">
+<p>Plan Your New Home!</p><br />
 
 
-<div class="home-top span4">
+<slideshow>
+<a href="javascript:gotoshow()"><img src="food1.jpg" name="slide" border=0 width=400 height=400></a>
+<script>
+<!--
+
+//configure the paths of the images, plus corresponding target links
+slideshowimages("/assets/Hamilton.jpg","/assets/1202-elev.jpg","/assets/3956plan.jpg","/assets/front_pool2.jpg","/assets/1202-elev.jpg")
+slideshowlinks("http://food.epicurious.com/run/recipe/view?id=13285","http://food.epicurious.com/run/recipe/view?id=10092","http://food.epicurious.com/run/recipe/view?id=100975","http://food.epicurious.com/run/recipe/view?id=2876","http://food.epicurious.com/run/recipe/view?id=20010")
+
+//configure the speed of the slideshow, in miliseconds
+var slideshowspeed=2000
+
+var whichlink=0
+var whichimage=0
+function slideit(){
+if (!document.images)
+return
+document.images.slide.src=slideimages[whichimage].src
+whichlink=whichimage
+if (whichimage<slideimages.length-1)
+whichimage++
+else
+whichimage=0
+setTimeout("slideit()",slideshowspeed)
+}
+slideit()
+
+//-->
+</script>
+</div>
+</slideshow>
+
+<div class="astric span12">
+<p>* * * *</p>
+</div>
+
+</div>
+<div class="reset span12"></div>
+<div class="more-info span11">
+	<h3>architectWare | Making building your next custom home easy!</h3>
+	<p>Look around and check out our custom home plans.  If you like what you see, save it, email the plan to your friends for feedback, or purchase it!</p>
+	<p>When you purchase the plan you will be sent the <u>complete architectural</u> drawing and have everything you need to get started on your new custom home</p>
+<br />
+</div>	
+
+<div class="astric span12">
+<p>* * * *</p>
+</div>
+
+<div class="home-search span4">
 <center><h3>Find Your Next Custom Home Here</h3></center><br />
 
 <%= search_form_for @q do |f| %>
@@ -42,8 +154,8 @@
 
 </div>
 
-<div class="popular span7">
-<h3>Choose From Some of Our Most Popular Plans</h3><br />
+<div class="popularplans span7">
+<h3>Check Out Some of Our Most Popular Plans</h3><br />
 
 
 
@@ -78,21 +190,15 @@
 </div>
 </div>
 
-
-<div class="about span11">
-	
-	<center><h3>Presented by Venture Four Architects</h3></center> 
-	<%= link_to image_tag("Venture-Four-logo.png", :align => 'right') %>
-	<br />
-	<p>
-		<b><%= link_to "Venture Four Architects", "#" %></b> was founded in 1990 as a full service Austin architectural firm.  The firm has produced over 800 residences and a variety of commercial building designs in Austin.  The principals contribute over fifty years experience in design, planning,  graphic production and construction management
-	</p>
-<br />		
-	<p>
-
-	</p><br />
-		
+<div class="astric span12">
+<p>* * * *</p>
 </div>
+
+<div class="questions span12">
+	<h3>Still have questions?</h3>
+	<p>Check out our FAQ page or feel free to <%= link_to "Contact Us", contact_path %></p><br /><br />
+</div>
+	
 
 
 

@@ -1,6 +1,8 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
 .logob {
 margin-top: 65px;
 position: absolute;
@@ -12,62 +14,70 @@ padding: 30px;
 margin: 10px;
 
 }
+.logo {
+margin: 0 auto !important;
+float: none !important;
 
+}
 
 .logo img {
--webkit-border-radius: 6px 6px 6px 6px;
- -moz-border-radius: 6px 6px 6px 6px;
- border-radius: 6px 6px 6px 6px;
-box-shadow: 5px 5px 5px #383838 !important;
-}
-.home-top-right img {
-
-box-shadow: 5px 5px 5px #888888 !important;
-margin-bottom: 30px;
-
-
--webkit-border-radius: 6px 6px 6px 6px;
- -moz-border-radius: 6px 6px 6px 6px;
- border-radius: 6px 6px 6px 6px;
+float: center;
+box-shadow: 0px 0px 0px #888888 !important;
 }
 
-.home-top {
-padding: 10px;
-background: rgb(238,238,238); /* Old browsers */
-background: -moz-linear-gradient(top,  rgba(238,238,238,1) 0%, rgba(204,204,204,1) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(238,238,238,1)), color-stop(100%,rgba(204,204,204,1))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* IE10+ */
-background: linear-gradient(to bottom,  rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=0 ); /* IE6-9 */
-box-shadow: 5px 5px 5px #888888 !important;
-margin-bottom: 30px;
-border: 3px solid #800000;
--webkit-border-radius: 6px 6px 6px 6px;
- -moz-border-radius: 6px 6px 6px 6px;
- border-radius: 6px 6px 6px 6px;
+.heading h3 {
+font-family: "CrimsonSemibold", "Times New Roman", Georgia, serif;
+font-weight: 500;
+font-style: normal;
+font-size: 38px;
+text-align: center;
+clear: both;
+line-height: 1.0em;
+margin-bottom: 20px;
+letter-spacing: -2px;
+color: #232323;
 }
+
+
+.home-top1 {
+font-size:22px;
+background: #fff !important;
+box-shadow: 0px 0px 0px #888888 !important;
+border: 2px solid #933333;
+border-radius: 5px;
+text-align: center;
+margin: 23px;
+padding:3px;
+font-family: "CrimsonSemibold", "Times New Roman", Georgia, serif;
+}
+.home-top1 h4 {
+font-family: "CrimsonSemibold", "Times New Roman", Georgia, serif;
+font-size:24px !important;
+line-height: 1.0em;
+margin-bottom:10px;
+}
+.home-top1 p {
+font-family: "CrimsonSemibold", "Times New Roman", Georgia, serif;
+}
+
+.home-top1 span {
+font-family: "CrimsonSemibold", "Times New Roman", Georgia, serif;
+font-size:18px;
+color: #8FBBBF;
+border:none !important;
+box-shadow: 0px 0px 0px #888888 !important;
+}
+
+
+
 .pic {
 margin-right: 30px;
 margin-bottom: 10px;
 }
 .home-top img {
-box-shadow: 5px 5px 5px #000 !important;
-margin-bottom: 30px;
--webkit-border-radius: 6px 6px 6px 6px;
- -moz-border-radius: 6px 6px 6px 6px;
- border-radius: 6px 6px 6px 6px;
+
 }
 
-.well {
-
-box-shadow: 5px 5px 5px #888888 !important;
-margin-bottom: 30px;
--webkit-border-radius: 6px 6px 6px 6px;
- -moz-border-radius: 6px 6px 6px 6px;
- border-radius: 6px 6px 6px 6px;
-}
 
 .field .text_field{
 width: 2em;
@@ -76,12 +86,28 @@ width: 2em;
 width: 2em;
 }
 .popular {
-float: right !important;
+display: block;
+text-align:center;
+margin-left: auto;
+margin-right: auto;
+}
+
+.popular p {
+font-size:200%;
+font-family: "CrimsonSemibold", "Times New Roman", Georgia, serif;
+font-weight: 500;
+letter-spacing: -2px;
+color: #666;
+
+}
+.popular slideshow {
+
 }
 .pic img {
-border: 3px solid #800000;
 
-box-shadow: 5px 5px 5px #000 !important;
+border: 2px solid #800000;
+
+box-shadow: 0px 0px 0px #000 !important;
 margin-bottom: 20px;
 -webkit-border-radius: 6px 6px 6px 6px;
  -moz-border-radius: 6px 6px 6px 6px;
@@ -94,29 +120,43 @@ color: #800000 !important;
 .btn btn-large btn-primary{
 font: #fff !important;
 }
-.about {
-background: rgb(238,238,238); /* Old browsers */
-background: -moz-linear-gradient(top,  rgba(238,238,238,1) 0%, rgba(204,204,204,1) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(238,238,238,1)), color-stop(100%,rgba(204,204,204,1))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* IE10+ */
-background: linear-gradient(to bottom,  rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=0 ); /* IE6-9 */
 
-margin-bottom: 20px;
-padding: 10px;
-box-shadow: 5px 5px 5px #383838 !important;
-margin-bottom: 30px;
--webkit-border-radius: 6px 6px 6px 6px;
- -moz-border-radius: 6px 6px 6px 6px;
- border-radius: 6px 6px 6px 6px;
+.more-info {
+padding-left:100px;
+padding-right:100px;
+text-align:center;
+font-family: "CrimsonSemibold", "Times New Roman", Georgia, serif;
+font-weight: 500;
+
+font-weight: 400;
+font-size: 22px;
+line-height: 1.3em;
+color: #666;
 }
 
-.about img {
-padding: 10px;
--webkit-border-radius: 6px 6px 6px 6px;
- -moz-border-radius: 6px 6px 6px 6px;
- border-radius: 6px 6px 6px 6px;
+.more-info h3 {
+font-family: "CrimsonSemibold", "Times New Roman", Georgia, serif;
+font-weight: 500;
+font-style: normal;
+font-size: 58px;
+clear: both;
+line-height: 1.0em;
+margin-bottom: 20px;
+letter-spacing: -2px;
+color: #232323;
+}
 
+.astric {
+text-align: center;
+color: #666;
+text-size: 32px;
+margin-top:20px;
+margin-bottom: 20px;
+letter-spacing: 8px;
+}
+
+.questions {
+display: block;
+text-align: center;
+font-family: "CrimsonSemibold", "Times New Roman", Georgia, serif;
 }
