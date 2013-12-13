@@ -53,7 +53,7 @@ border: 2px solid #933333;
 border-radius: 5px;
 text-align: center;
 margin: 23px;
-padding:px;
+padding:3px;
 font-family: "CrimsonSemibold", "Times New Roman", Georgia, serif;
 }
 .home-top1 h4 {
@@ -92,6 +92,7 @@ width: 2em;
 width: 2em;
 }
 .popular {
+
 display: block;
 text-align:center;
 margin-left: auto;
@@ -106,8 +107,8 @@ letter-spacing: -2px;
 color: #666;
 
 }
-.popular slideshow {
-
+.slideshow img{
+border: 2px solid #888;
 }
 .pic img {
 
