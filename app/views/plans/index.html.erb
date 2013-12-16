@@ -1,4 +1,4 @@
-
+<div class="visible-desktop">
 <script>function moveScroller() {
     var move = function() {
         var st = $(window).scrollTop();
@@ -22,7 +22,7 @@
     move();
 }
 </script>
-
+</div>
 <div class="searchheading">
 <h2>Advanced Plan Search</h2><br />
 </div>
@@ -30,9 +30,8 @@
 
 <!-- end search function for DT/LT devices -->
 	
-<div class="visible-desktop">
-	<div id="sidebar"> 
 
+	  <div id="sidebar"> 
 	  <div id="scroller-anchor"></div> 
 	  <div id="scroller" style="margin-top:10px; width:960px"> 
 
@@ -84,66 +83,15 @@
 <% end %>
   </div>
 </div>
-</div>
+<div class="visible-desktop">
 <script type="text/javascript"> 
   $(function() {
     moveScroller();
   });
 </script>
-
+</div>
 <!-- end search function for DT/LT devices -->
 
-<!-- start search function for mobile devices -->
-<div class=".visible-phone">
-	<div id="sidebar"> 
- 
-<%= search_form_for @q do |f| %>
-<div class="searchfield span3">
-<%= f.label :sqfoot_gteq, "Square Footage Min" %>
-<%= f.text_field :sqfoot_gteq %>
-<%= f.label :sqfoot_lteq, "Square Footage Max" %>
-<%= f.text_field :sqfoot_lteq %>
-
-<%= f.label :bedrooms_eq, "Bedrooms" %>
-<%= f.select(:bedrooms_eq, [['Not Sure', ''],['1', 1], ['2', 2],['3', 3],['4', 4],['5', 5],['6+', 6]]) %>
-                                
-
-  <%= f.label :bathrooms_eq, "Bathrooms" %>
-<%= f.select(:bathrooms_eq, [['Not Sure', ''],['1', 1], ['2', 2],['3', 3],['4+', 4]]) %>
-
-
-	  <%= f.label :half_bath_eq, "Half-Bathrooms" %>
-	<%= f.select(:half_bath_eq, [['Not Sure', ''],['1', 1], ['2', 2],['3+', 3]]) %>
-</div>
-<div class="searchfield2 span2">
-
-	<%= f.label :living_eq, "Living Areas" %>
-	<%= f.select(:living_eq, [['Not Sure', ''],['1', 1], ['2', 2],['3', 3],['4+', 4]]) %>	
-	
-	<%= f.label :dining_eq, "Dining Areas" %>
-	<%= f.select(:dining_eq, [['Not Sure', ''],['1', 1], ['2', 2],['3', 3],['4+', 4]]) %>
-	
-	<%= f.label :garage_eq, "Number of Garages" %>
-	<%= f.select(:garage_eq, [['Not Sure', ''],['0', 1],['1', 2], ['2', 3],['3', 4],['4+', 5]]) %>
-
-	
-	<%= f.label :stories_eq, "Levels/Design" %>
-	<%= f.select(:stories_eq, [['Not Sure', ''],['Single-Story', 'Single-Story'], ['Multi-Story', 'Multi-Story'],['Upside-Down', 'Upside-Down'],['Walk Out basement', 'Walk Out basement']]) %>
-	
-	<%#<%= f.label :view_eq, "View" %>
-    <%#<%= f.select(:view_eq, [['Front View 1st Floor', 1], ['Front View 2nd Floor', 2],['Rear View 1st Floor', 3],['Rear View 2nd Floor', 4]],{ :prompt => "Not Sure"}) %>
-	
-	<%= f.label :suite_eq, "Owners' Suite" %>
-	<%= f.select(:suite_eq, [['Not Sure', ''],['Primary Level', 1],['Secondary Level', 2]]) %>
-<p>
-  <%= f.submit class: "btn btn-primary" %>
-
-<%= link_to "Start Over", plans_path, class: "btn btn-primary" %></p><br /><br /><br />
-</div>
-
-<% end %>
-</div>
-<!-- end search function for mobile devices -->
 
 <div class="pagination-right">
 <%= will_paginate @plans %>
