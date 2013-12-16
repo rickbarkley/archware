@@ -1,5 +1,7 @@
 
-<script>function moveScroller() {
+<script>
+if(screen.width >= 480){
+function moveScroller() {
     var move = function() {
         var st = $(window).scrollTop();
         var ot = $("#scroller-anchor").offset().top;
@@ -21,6 +23,7 @@
     $(window).scroll(move);
     move();
 }
+}
 </script>
 
 <div class="searchheading">
@@ -28,12 +31,12 @@
 </div>
 <div class="border span11"><p></div><br /><br />
 
-<!-- end search function for DT/LT devices -->
+<!-- Start search function for DT/LT devices -->
 	
 
 	  <div id="sidebar"> 
-	  <div id="scroller-anchor" class="visible-desktop"></div> 
-	  <div id="scroller" class="visible-desktop" style="margin-top:10px; width:960px"> 
+	  <div id="scroller-anchor"></div> 
+	  <div id="scroller" style="margin-top:10px; width:960px"> 
 
 
 <%= search_form_for @q do |f| %>
@@ -88,6 +91,7 @@
   $(function() {
     moveScroller();
   });
+
 </script>
 
 <!-- end search function for DT/LT devices -->
