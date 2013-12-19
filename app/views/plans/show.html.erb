@@ -1,10 +1,10 @@
 
 
 <p id="notice"><%= notice %></p>
+<div class="container">
+<div class="row">	
+<div id="plan" class="col-md-9">
 
-
-<div class="plan span9">
-	
 
 <center><%= link_to image_tag(@plan.drawing_1.url(:full)), @plan.drawing_1.url(:full), class: "lightbox_trigger" %></center>
 <br /><br />
@@ -17,7 +17,7 @@
 	</div>
 	
 
-<div class="well span2">
+<div class="well col-md-2">
 	<center><%= link_to "Purchase Now!", new_plan_order_path(@plan), class: "btn btn-primary"   %></center><br /><br />
 		<% unless @plan.name.blank? %>
 		<p>
@@ -88,15 +88,15 @@
 		<% unless @plan.drawing_2.blank? %>				
 		<p>
 			<b>Secondary View:</b>
-			<%= link_to image_tag(@plan.drawing_2.url(:full)), @plan.drawing_2.url(:full), class: "lightbox_trigger" %>
+			<%= link_to image_tag(@plan.drawing_2.url(:thumb)), @plan.drawing_2.url(:full), class: "lightbox_trigger" %>
 		</p>
 		<% end %>
-
+		<div class="img-responsive">
 		<p>
 			<b>Elevation View:</b>
-			<%= link_to image_tag(@plan.elevation.url(:full)), @plan.elevation.url(:full), class: "lightbox_trigger" %>
+			<%= link_to image_tag(@plan.elevation.url(:thumb)), @plan.elevation.url(:full), class: "lightbox_trigger" %>
 		</p>
-
+</div>
 
    
   </div>
@@ -168,4 +168,6 @@ jQuery(document).ready(function($) {
 <% end %>
 
 	<br /><br /><br /><br />
+</div>
+</div>
 </div>

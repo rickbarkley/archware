@@ -26,13 +26,16 @@ function moveScroller() {
 }
 </script>
 
+
+
 <div class="searchheading">
-<h2>Advanced Plan Search</h2><br />
+<h2><center>Advanced Plan Search</center></h2><br />
 </div>
 <div class="border span11"><p></div><br /><br />
 
 <!-- Start search function for DT/LT devices -->
-	
+      <div class="container">
+        <div class="row">	
 
 	  <div id="sidebar"> 
 	  <div id="scroller-anchor"></div> 
@@ -40,43 +43,43 @@ function moveScroller() {
 
 
 <%= search_form_for @q do |f| %>
-<div class="searchfield span3">
-<%= f.label :sqfoot_gteq, "Square Footage Min" %>
-<%= f.text_field :sqfoot_gteq %>
-<%= f.label :sqfoot_lteq, "Square Footage Max" %>
-<%= f.text_field :sqfoot_lteq %>
+<div id="searchfield" class="col-md-3">
+<p><%= f.label :sqfoot_gteq, "Square Footage Min" %></p>
+<p><%= f.text_field :sqfoot_gteq %></p>
+<p><%= f.label :sqfoot_lteq, "Square Footage Max" %></p>
+<p><%= f.text_field :sqfoot_lteq %></p>
 
-<%= f.label :bedrooms_eq, "Bedrooms" %>
-<%= f.select(:bedrooms_eq, [['Not Sure', ''],['1', 1], ['2', 2],['3', 3],['4', 4],['5', 5],['6+', 6]]) %>
+<p><%= f.label :bedrooms_eq, "Bedrooms" %></p>
+<p><%= f.select(:bedrooms_eq, [['Not Sure', ''],['1', 1], ['2', 2],['3', 3],['4', 4],['5', 5],['6+', 6]]) %></p>
                                 
 
-  <%= f.label :bathrooms_eq, "Bathrooms" %>
-<%= f.select(:bathrooms_eq, [['Not Sure', ''],['1', 1], ['2', 2],['3', 3],['4+', 4]]) %>
+  <p><%= f.label :bathrooms_eq, "Bathrooms" %></p>
+<p><%= f.select(:bathrooms_eq, [['Not Sure', ''],['1', 1], ['2', 2],['3', 3],['4+', 4]]) %></p>
 
 
-	  <%= f.label :half_bath_eq, "Half-Bathrooms" %>
-	<%= f.select(:half_bath_eq, [['Not Sure', ''],['1', 1], ['2', 2],['3+', 3]]) %>
+	  <p><%= f.label :half_bath_eq, "Half-Bathrooms" %></p>
+	<p><%= f.select(:half_bath_eq, [['Not Sure', ''],['1', 1], ['2', 2],['3+', 3]]) %></p>
 </div>
-<div class="searchfield2 span2">
+<div id="searchfield2" class="col-md-3">
 
-	<%= f.label :living_eq, "Living Areas" %>
-	<%= f.select(:living_eq, [['Not Sure', ''],['1', 1], ['2', 2],['3', 3],['4+', 4]]) %>	
+	<p><%= f.label :living_eq, "Living Areas" %></p>
+	<p><%= f.select(:living_eq, [['Not Sure', ''],['1', 1], ['2', 2],['3', 3],['4+', 4]]) %></p>	
 	
-	<%= f.label :dining_eq, "Dining Areas" %>
-	<%= f.select(:dining_eq, [['Not Sure', ''],['1', 1], ['2', 2],['3', 3],['4+', 4]]) %>
+	<p><%= f.label :dining_eq, "Dining Areas" %></p>
+	<p><%= f.select(:dining_eq, [['Not Sure', ''],['1', 1], ['2', 2],['3', 3],['4+', 4]]) %></p>
 	
-	<%= f.label :garage_eq, "Number of Garages" %>
-	<%= f.select(:garage_eq, [['Not Sure', ''],['0', 1],['1', 2], ['2', 3],['3', 4],['4+', 5]]) %>
+	<p><%= f.label :garage_eq, "Number of Garages" %></p>
+	<p><%= f.select(:garage_eq, [['Not Sure', ''],['0', 1],['1', 2], ['2', 3],['3', 4],['4+', 5]]) %></p>
 
 	
-	<%= f.label :stories_eq, "Levels/Design" %>
-	<%= f.select(:stories_eq, [['Not Sure', ''],['Single-Story', 'Single-Story'], ['Multi-Story', 'Multi-Story'],['Upside-Down', 'Upside-Down'],['Walk Out basement', 'Walk Out basement']]) %>
+	<p><%= f.label :stories_eq, "Levels/Design" %></p>
+	<p><%= f.select(:stories_eq, [['Not Sure', ''],['Single-Story', 'Single-Story'], ['Multi-Story', 'Multi-Story'],['Upside-Down', 'Upside-Down'],['Walk Out basement', 'Walk Out basement']]) %></p>
 	
 	<%#<%= f.label :view_eq, "View" %>
     <%#<%= f.select(:view_eq, [['Front View 1st Floor', 1], ['Front View 2nd Floor', 2],['Rear View 1st Floor', 3],['Rear View 2nd Floor', 4]],{ :prompt => "Not Sure"}) %>
 	
-	<%= f.label :suite_eq, "Owners' Suite" %>
-	<%= f.select(:suite_eq, [['Not Sure', ''],['Primary Level', 1],['Secondary Level', 2]]) %>
+	<p><%= f.label :suite_eq, "Owners' Suite" %></p>
+	<p><%= f.select(:suite_eq, [['Not Sure', ''],['Primary Level', 1],['Secondary Level', 2]]) %></p>
 <p>
   <%= f.submit class: "btn btn-primary" %>
 
@@ -98,13 +101,11 @@ if(screen.width >= 480){
 <!-- end search function for DT/LT devices -->
 
 
-<div class="pagination-right">
 <%= will_paginate @plans %>
-</div>
+
     <% @plans.each do |plan| %>
-<div class="image span6">
-	
-<%= link_to image_tag(plan.drawing_1.url(:full)), plan_path(plan) %>
+<div id="image" class="col-md-6">	
+<center><%= link_to image_tag(plan.drawing_1.url(:full)), plan_path(plan) %></center>
 <dl class="dl-vertical">
 	<p>
 	  <b>Bedrooms:</b>
@@ -124,14 +125,17 @@ if(screen.width >= 480){
 
 </div>
 <% end %>
-<div class="pagination-right span11">
+<div class="col-md-4 col-md-offset-6">
 <%= will_paginate @plans %>
 </div>
 <br />
 <% if user_signed_in? %>
 <% if current_user.has_role? :admin %>
-<div class="new-button span12">
+<div class="col-md-4">
 <%= link_to 'New Plan', new_plan_path, class: "btn btn-large btn-primary" %><br /><br />
 </div>
 <% end %>
 <% end %>
+
+</div>
+</div>

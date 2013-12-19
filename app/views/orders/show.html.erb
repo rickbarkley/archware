@@ -1,14 +1,20 @@
 <p id="notice"><%= notice %></p>
-<h1>Thank you for your purchase of <%= @order.plan.name %></h1>
+
+<div class="container">
+	<div class="row">
+<h1><cnter>Thank you for your purchase of <%= @order.plan.name %></center></h1><br /><br />
 
 <p>
   <b>Plan:</b>
   <%= @order.plan.name %>
 </p>
 <p>Please allow 3-4 days for us to print out the architectural drawings and ship them to you.</p>
-<p>If you have any questions at all please feel free to contact Rick Remore at <%= mail_to "plans@venturefour.com", "plans@venturefour.com" %> or (512) 328-8581.</p>
+<p>If you have any questions at all please feel free to contact Rick Barkley at <%= mail_to "rick_barkley@nuvola-networks.com", "rick_barkley@nuvola-networks.com" %> or (512) 698-8913.</p>
 	
 <p><%= link_to "Back to Plans", plans_path %></p>	
 
 <%#<%= link_to 'Edit', edit_order_path(@order) %> 
 <%#<%= link_to 'Back', orders_path %>
+	</div>
+</div>
+

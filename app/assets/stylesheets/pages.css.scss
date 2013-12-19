@@ -2,48 +2,76 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/* Full Page Image Header Area */
 
-.logob {
-margin-top: 65px;
-position: absolute;
-border-top: 4px solid #800000;
-padding: 30px;
-}
+.vert-text {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
 
-.seo img {
-margin: 10px;
-
-}
-.logo {
-margin: 0 auto !important;
-float: none !important;
 
 }
 
-.logo img {
-margin-top: 30px;
-margin-bottom: 20px;
-float: center;
-box-shadow: 0px 0px 0px #888888 !important;
+.vert-text h1 {
+  padding: 0;
+  margin: 0;
+  font-size: 7.5em;
+  font-weight: 700;
+
 }
 
-.heading h3 {
+
+
+.header {
+  display: table;
+  height: 100%;
+  width: 100%;
+  margin-top:-20px;
+  position: relative;
+  background: url("Exterior.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.header h1 {
+  font-family: "CrimsonRoman", "Times New Roman", Georgia, serif;
+  color:#fff;
+  text-shadow: 5px 0px #000;
+}
+
+.header h3 {
 font-family: "CrimsonSemibold", "Times New Roman", Georgia, serif;
 font-weight: 500;
 font-style: normal;
-font-size: 38px;
+font-size:5.5em;
 text-align: center;
 clear: both;
 line-height: 1.0em;
 margin-bottom: 20px;
 letter-spacing: -2px;
-color: #232323;
+  color:#fff;
+  text-shadow: 3px 0px #000;
+
 }
 
+/* Services */
+
+#services {
+  background: #7fbbda;
+  padding: 50px 0;
+  color: #000;
+}
+
+#services h2 {
+	color: #fff;
+	margin-right:-20px;
+}
 
 .home-top1 {
-min-width: 165px;
-max-width: 300px;
+min-width: 175px;
+
 height: 325px;
 font-size:22px;
 background: #fff !important;
@@ -75,20 +103,21 @@ box-shadow: 0px 0px 0px #888888 !important;
 
 
 
-.pic {
+#pic {
 margin-right: 30px;
 margin-bottom: 10px;
 }
-.home-top img {
 
+#home-search {
+	text-align: center;
+	line-height:2.0em;
+	font-size:18px;
+	text-decoration:none;
+	font-family: "CrimsonSemibold", "Times New Roman", Georgia, serif;
+	font-weight:700;
 }
-
-
-.field .text_field{
-width: 2em;
-}
-.text_field {
-width: 2em;
+.searh-form .select {
+	width: 5em;
 }
 .popular {
 
@@ -113,7 +142,7 @@ border: 2px solid #888;
 text-align: center;
 
 }
-.pic img {
+#pic img {
 
 border: 2px solid #800000;
 
@@ -123,17 +152,20 @@ margin-bottom: 20px;
  -moz-border-radius: 6px 6px 6px 6px;
  border-radius: 6px 6px 6px 6px;
 }
-.pic li {
+#pic li {
 color: #800000 !important;
 }
 
-.btn btn-large btn-primary{
+.btn btn-lg btn-primary{
 font: #fff !important;
+box-shadow: 0px 0px 0px 0px #000 !important;
 }
 
 .more-info {
 padding-left:100px;
 padding-right:100px;
+padding-top:50px;
+padding-bottom:50px;
 text-align:center;
 font-family: "CrimsonSemibold", "Times New Roman", Georgia, serif;
 font-weight: 500;
@@ -182,3 +214,7 @@ font-size: 22px;
 line-height: 1.3em;
 color: #666;
 }
+
+
+
+

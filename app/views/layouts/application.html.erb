@@ -4,8 +4,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
     <title><%= content_for?(:title) ? yield(:title) : "nuvolio" %></title>
-    <%= javascript_include_tag "https://js.stripe.com/v2/", "application" %>
+    <%= javascript_include_tag "https://js.stripe.com/v2/", "application", "bootstrap.js" %>
     <%= csrf_meta_tags %>
     <%= tag :meta, :name => "stripe-key", :content => STRIPE_PUBLIC_KEY %>
 
@@ -36,40 +39,68 @@
     <!-- Size should be 32 x 32 pixels -->
     <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
 
-    <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag "application", "bootstrap" %>
   </head>
   <body>
 
-    <div class="navbar navbar-fluid-top">
-      <div class="navbar-inner">
-        <div class="container-fluid">
-          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <div class="container-fluid nav-collapse">
-            <ul class="nav">
-            <%= render 'layouts/navigation' %>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
-      </div>
-    </div>
+<nav class="navbar navbar-default" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="/home">Nuvolio</a>
+  </div>
 
-    <div class="container-fluid">
-      <div class="row-fluid">
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/plans">View Plans</a></li>
+      <% if user_signed_in? %>
+      <li><%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %></li>
+      <% else %>
+      <li><%= link_to 'Login', new_user_session_path %></li>
+      <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+      <% end %>
 
-        <div class="span12">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Action</a></li>
+          <li><a href="#">Another action</a></li>
+          <li><a href="#">Something else here</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Separated link</a></li>
+          <li class="divider"></li>
+          <li><a href="#">One more separated link</a></li>
+        </ul>
+      </li>
+    </ul>
+    
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="/contact">Contact</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Action</a></li>
+          <li><a href="#">Another action</a></li>
+          <li><a href="#">Something else here</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Separated link</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</nav>
+
           <%= bootstrap_flash %>
           <%= yield %>
-        </div>
-      </div><!--/row-->
-		<%= render 'layouts/footer' %>
-		<div class="pagination-centered">
-		<%= link_to image_tag("N_cloud_small.png", alt: "Nuvola Networks"), root_path %>
-	</div>
-    </div> <!-- /container -->
 
+    <%= render 'layouts/footer' %>
   </body>
+
+
 </html>

@@ -1,3 +1,5 @@
+
+
 <%= form_for @plan, :html => { :multipart => true } do |f| %>
   <% if @plan.errors.any? %>
     <div id="error_explanation">
@@ -10,7 +12,7 @@
       </ul>
     </div>
   <% end %>
-<div class="row-one span3">
+<div id="row-one" class="col-md-3">
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
@@ -32,7 +34,7 @@
     <%= f.text_field :depth %>
   </div>
 </div>
-<div class="row-two span3">
+<div id="row-two" class="col-md-3">
   <div class="field">
     <%= f.label :half_bath %><br />
     <%= f.select :half_bath, options_for_select([[''],['1', 1], ['2', 2],['3+', 3]]), :class => 'select_field' %>
@@ -54,7 +56,7 @@
     <%= f.text_field :width %>
   	</div>
 </div>
-	<div class="row-three span3">
+	<div id="row-three" class="col-md-3">
   <div class="field">
     <%= f.label :stories, "Levels" %><br />
     <%= f.select(:stories, [['Single-Story', 1], ['Multi-Story', 2],['Upside-Down', 3],['Walk Out basement', 4]],{ :prompt => "Not Sure"}) %>
@@ -72,7 +74,7 @@
     <%= f.select(:price, [['0.75', 0.75],['0.90', 0.90],['1.05', 1.05],['1.20', 1.20]]) %>
   </div>
 </div>
-<div class="row-four span2">
+<div id="row-four" class="col-md-3">
   <div class="control-group">
 	   <%= f.label :drawing_1, "Upload Primary Plan PDF", :class => 'control-label' %>
 <%= f.file_field :drawing_1 %>

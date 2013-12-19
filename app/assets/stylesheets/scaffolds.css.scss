@@ -1,9 +1,17 @@
+/*
 .container-fluid {
 max-width:1250px;
 margin: 0 auto !important;
+}*/
+
+html, body
+{
+    height: 100%;
 }
+
 body {
   height: 100%;
+  width: 100%;
   background-color: #fff;
   background-image: url("background_web.PNG");
   background-attachment:fixed;
@@ -20,7 +28,7 @@ margin-top: 75px;
 
 .btn {
 color: #fff !important;
-box-shadow: 5px 5px 5px #888888 !important;
+
 margin-top: 15px !important;
 }
 
@@ -56,9 +64,12 @@ div {
 /* footer */
 
 footer {
+height:160px;
+background: #7fbbda;
 margin-left: -10px;
 padding: 10px;
 border-top: 2px solid #800000;
+margin-bottom:0px;
 
 
 }
@@ -73,6 +84,7 @@ footer a:hover {
 
 footer small {
   float: left;
+  margin-left:25px;
 
 }
 footer menu {
@@ -84,7 +96,11 @@ margin-top: -15px;
   float: right;
   list-style: none;
 }
-
+#nnlogo {
+  text-align:center;
+  margin-right:auto;
+  margin-left:auto;
+}
 footer ul li {
   float: left;
   margin-left: 10px;

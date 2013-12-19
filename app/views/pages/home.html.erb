@@ -32,54 +32,112 @@ winslide.focus()
 //-->
 </script>
 
-<div class="pagination-centered">
-		<div class="logo">
-
-		<%= image_tag("nuvolio2.png", :align => 'left') %><br /><br />
-		</div>
+<!-- Full Page Image Header Area -->
+    <div id="top" class="header">
+      <div class="vert-text">
+        <h1>Nuvolio</h1>
+        <h3><em>Your next custom home starts here.</em></h3>
+        <a href="#about" class="btn btn-primary btn-lg">Find Out More</a>
+      </div>
+		
 	</div>
-	
-		<div class="heading span12">
-		<h3>Welcome to Nuvolio...Your next custom home starts here.</h3>
-		</div>
 
-<!--		
-<div class="seo span2">
+    <!-- /Full Page Image Header Area -->
 
-	<%= link_to image_tag("twitter.png", :align => 'right'), "https://twitter.com/nuvolanetworks" %>
-	<%= link_to image_tag("facebook.png", :align => 'right'), "https://www.facebook.com/pages/nuvola-netwroks.com" %>
-	<%= link_to image_tag("linkedin.png", :align => 'right'), "http://www.linkedin.com/" %>
+    <div class="reset span12"></div>
+<div id="about" class="more-info">
+	<h3>Nuvolio | Making building your next custom home easy!</h3>
+	<p>Look around and check out our custom home plans.  If you like what you see, save it, email the plan to your friends for feedback, or purchase it!</p>
+	<p>When you purchase the plan you will be sent the <u>complete architectural</u> drawing and have everything you need to get started on your new custom home</p>
+<br />
 </div>
-//-->
-<div class="reset span12"></div>
 
-<div class="home-top1 span2">
+<div id="services" class="services">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-md-offset-4 text-center">
+            <h2>Our Services</h2>
+            <hr>
+          </div>
+        </div>
+
+	<div class="col-md-2 col-md-offset-2 text-center">
+<div class="home-top1"> 
+
 <img src="/assets/mhouse.jpg">
 <h4><%= link_to "Search for Custom Plans", plans_path %></h4>
 <p><span>Search our database of over 1000 plans</span></p>
 <p>Don't settle for what "Almost" works.  with our extensive plan listing you are sure to find exactly what you need</p>
 </div>
-
-<div class="home-top1 span2">
+</div>
+<div class="col-md-2">
+<div class="home-top1">
 <img src="/assets/mhouse.jpg">
 <h4><%= link_to "Contact an Architect", plans_path %></h4>
 <p><span>Have a question about a plan?</span></p>
 <p>We can put you in contact with the plan's designer and make sure ALL your questions are answered.</p>
 </div>
-<div class="home-top1 span2">
+</div>
+<div class="col-md-2">
+<div class="home-top1">
 <img src="/assets/mhouse.jpg">
 <h4><%= link_to "Purchase a plan", plans_path %></h4>
 <p><span>Save by purchasing a completed plan</span></p>
 <p>Build the exact custom home you want in the price range you can afford. <%= link_to "Click for more details", contact_path %></p>
+</div>
+</div>
+<div class="col-md-2">
+<div class="home-top1">
+<img src="/assets/mhouse.jpg">
+<h4><%= link_to "Custom Modifications", plans_path %></h4>
+<p><span>Have you found the right design, but need it adjusted?</span></p>
+<p>No problem, your adjustments can be made by the at a reasonable hourly rate.  
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<br /><br />
+<div class="row">
+	<div class="container">
+
+		<div id="home-search" class="col-md-4">
+<center><h3>Find Your Next Custom Home Here</h3></center><br />
+
+<%= search_form_for @q do |f| %>
+
+
+<p>Square Footage Min: <%= f.text_field :sqfoot_gteq %></p>
+
+<p>Square Footage Max: <%= f.text_field :sqfoot_lteq %></p>
+
+
+<p>Number of Bedrooms: <%= f.select :bedrooms_eq, options_for_select([[''],['1', 1], ['2', 2],['3', 3],['4', 4]]), :class => 'select_field' %></p>
+
+
+<p>Number of Bathrooms: <%= f.select :bathrooms_eq, options_for_select([[''],['1', 1], ['2', 2],['3', 3],['4', 4]]), :class => 'select_field' %></p>
+
+
+<p>Number of Stories: <%= f.select :stories_eq, options_for_select([[''],['Single-Story', 1], ['Multi-Story', 2]]), :class => 'select_field' %></p>
+ 
+<center><p><%= f.submit class: "btn btn-lg btn-primary" %> 
+	<%= link_to "More Options", plans_path, class: "btn btn-lg btn-primary" %>
+</p></center>
+
+
+<% end %>
 
 </div>
-<br /><br />
-<div class="popular span5">
+<div class="col-md-8">
+<div class="popular">
 <br />
 
 
 <div class="slideshow">
-<a href="javascript:gotoshow()"><img src="food1.jpg" name="slide" border=0 width=640 height=400></a>
+	<center>
+<a href="javascript:gotoshow()"><img src="food1.jpg" name="slide" border=0 width=640 height=360></a>
+</center>
 <script>
 <!--
 
@@ -88,7 +146,7 @@ slideshowimages("/assets/Exterior.jpg","/assets/Patio.jpg","/assets/3956planv2.j
 slideshowlinks("http://www.nuvolio.com/plans","http://www.nuvolio.com/plans","http://www.nuvolio.com/plans5","http://www.nuvolio.com/plans","http://www.nuvolio.com/plans","http://www.nuvolio.com/plans","http://www.nuvolio.com/plans")
 
 //configure the speed of the slideshow, in miliseconds
-var slideshowspeed=2500
+var slideshowspeed=3500
 
 var whichlink=0
 var whichimage=0
@@ -106,102 +164,65 @@ setTimeout("slideit()",slideshowspeed)
 slideit()
 
 //-->
+
 </script>
 </div>
 </div>
-
-<div class="astric span12">
-<p>* * * *</p>
 </div>
-
-</div>
-<div class="reset span12"></div>
-<div class="more-info span12">
-	<h3>Nuvolio | Making building your next custom home easy!</h3>
-	<p>Look around and check out our custom home plans.  If you like what you see, save it, email the plan to your friends for feedback, or purchase it!</p>
-	<p>When you purchase the plan you will be sent the <u>complete architectural</u> drawing and have everything you need to get started on your new custom home</p>
-<br />
-</div>	
-
-<div class="astric span12">
-<p>* * * *</p>
-</div>
-
-<div class="home-search span4">
-<center><h3>Find Your Next Custom Home Here</h3></center><br />
-
-<%= search_form_for @q do |f| %>
-
-
-<b>Square Footage Min: </b><center><%= f.text_field :sqfoot_gteq %></center>
-
-<b>Square Footage Max: </b><center><%= f.text_field :sqfoot_lteq %></center>
-
-
-<b>Number of Bedrooms: </b><center><%= f.select :bedrooms_eq, options_for_select([[''],['1', 1], ['2', 2],['3', 3],['4', 4]]), :class => 'select_field' %></center>
-
-
-<b>Number of Bathrooms: </b><center><%= f.select :bathrooms_eq, options_for_select([[''],['1', 1], ['2', 2],['3', 3],['4', 4]]), :class => 'select_field' %></center>
-
-
-<b>Number of Stories:  </b><center><%= f.select :stories_eq, options_for_select([[''],['Single-Story', 1], ['Multi-Story', 2]]), :class => 'select_field' %></center>
- 
-<br /><br />
-<center><p><%= f.submit class: "btn btn-large btn-primary" %> 
-	<%= link_to "More Options", plans_path, class: "btn btn-large btn-primary" %>
-</p></center>
-
-
-<% end %>
-
-</div>
-
-<div class="popularplans span7">
-<h3>Check Out Some of Our Most Popular Plans</h3><br />
-
-
-
-
-<div class="pic span3">
-<%= image_tag("Exterior.jpg") %>
-</div>
-
-<div class="pic span3">
-<%= image_tag("Living-Kitchen1.jpg") %>
-</div>
-<div class="pic span3">
-<%= link_to image_tag("LivingRoom.jpg"), "#" %><br /><br />
-</div>
-<div class="pic span3">
-<%= image_tag("Ctyard1.jpg") %>
-</div>
-<div class="pic span3">
-<%= link_to image_tag("3956planv2.jpg"), "#" %>
-</div>
-<div class="pic span3">
-<%= image_tag("ExteriorRear2.JPG") %><br /><br />
-</div>
-<div class="pic span3">
-<%= link_to image_tag("1Front2.jpg"), "#" %>
-</div>
-<div class="pic span3">
-<%= image_tag("silverton-32.jpg") %>
-</div>
-<div class="pic span3">
-<%= link_to image_tag("Patio1.jpg"), "#" %><br /><br /><br /><br />
 </div>
 </div>
 
-<div class="astric span12">
-<p>* * * *</p>
+<div class="col-md-12">
+	<div class="astric">
+<p></p><br /><br />
 </div>
+
+</div>
+
+
+
 
 <div class="questions span12">
 	<h3>Still have questions?</h3>
 	<p>Check out our FAQ page or feel free to <%= link_to "Contact Us", contact_path %></p><br /><br />
 </div>
-	
 
+<!-- JavaScript -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+    <!-- Custom JavaScript for the Side Menu and Smooth Scrolling -->
+    <script>
+        $("#menu-close").click(function(e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+    </script>
+    <script>
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+    </script>
+    <script>
+      $(function() {
+        $('a[href*=#]:not([href=#])').click(function() {
+          if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
+            || location.hostname == this.hostname) {
+
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+            if (target.length) {
+              $('html,body').animate({
+                scrollTop: target.offset().top
+              }, 1000);
+              return false;
+            }
+          }
+        });
+      });
+    </script>
+	
 
 
 
