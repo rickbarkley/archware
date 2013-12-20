@@ -88,13 +88,13 @@
 		<% unless @plan.drawing_2.blank? %>				
 		<p>
 			<b>Secondary View:</b>
-			<%= link_to image_tag(@plan.drawing_2.url(:thumb)), @plan.drawing_2.url(:full), class: "lightbox_trigger" %>
+			<%= link_to image_tag(@plan.drawing_2.url(:full)), @plan.drawing_2.url(:full), class: "lightbox_trigger" %>
 		</p>
 		<% end %>
 		<div class="img-responsive">
 		<p>
 			<b>Elevation View:</b>
-			<%= link_to image_tag(@plan.elevation.url(:thumb)), @plan.elevation.url(:full), class: "lightbox_trigger" %>
+			<%= link_to image_tag(@plan.elevation.url(:full)), @plan.elevation.url(:full), class: "lightbox_trigger" %>
 		</p>
 </div>
 
