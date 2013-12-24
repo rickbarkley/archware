@@ -32,13 +32,59 @@ winslide.focus()
 //-->
 </script>
 
+
+
+<script>
+$(document).ready(function(){
+	$('#first').click(function(){
+		$('.header').css({"background" : "url(/assets/Exterior.jpg)",
+						"background-size" : "cover"
+
+			});
+	});
+$('#second').click(function(){
+		$('.header').css({"background" : "url(/assets/LivingRoom.jpg)",
+						"background-size" : "cover"
+
+			});
+	});
+$('#third').click(function(){
+		$('.header').css({"background" : "url(/assets/Back2.jpg)",
+						"background-size" : "cover"
+
+			});
+	});
+});
+</script>
+
 <!-- Full Page Image Header Area -->
+
+
     <div id="top" class="header">
-      <div class="vert-text">
-        <h1>Nuvolio</h1>
-        <h3><em>Your next custom home starts here.</em></h3>
-        <a href="#about" class="btn btn-primary btn-lg">Find Out More</a>
-      </div>
+
+    	     
+    	<div id="side-text" class="col-md-4 pull-right">
+			<h3>Nuvolio</h3>
+    		<p>Search Through 1000's of architectual plans and get a head start on your custom home!</p><br />
+    		<ul>
+    			<li>Award Winning Designs</li>
+    			<li>Austin/Hill Country Architecture</li>
+    			<li>Modern Style</li>
+
+    		</ul>
+    		<p><br />Make your dream home a reality!</p>
+    		<div id="first" class="col-md-4">
+    			<%= image_tag "Exterior.jpg" %>
+    		</div>
+    		<div id="second" class="col-md-4">
+    			<%= image_tag "LivingRoom.jpg" %>
+    		</div>
+    		<div id="third" class="col-md-4">
+    			<%= image_tag "Back2.jpg" %><br /><br />
+    		</div>
+    		<p><center><a href="#about" class="btn btn-primary btn-lg">Find Out More</a></center></p>
+    	</div>
+
 		
 	</div>
 
@@ -143,7 +189,7 @@ winslide.focus()
 
 //configure the paths of the images, plus corresponding target links
 slideshowimages("/assets/Exterior.jpg","/assets/Patio.jpg","/assets/3956planv2.jpg","/assets/Back2.jpg","/assets/Patio.jpg","/assets/Master SuiteBathroom-1.jpg","/assets/3956planv2.jpg")
-slideshowlinks("http://www.nuvolio.com/plans","http://www.nuvolio.com/plans","http://www.nuvolio.com/plans5","http://www.nuvolio.com/plans","http://www.nuvolio.com/plans","http://www.nuvolio.com/plans","http://www.nuvolio.com/plans")
+slideshowlinks("http://www.nuvolio.com/plans","http://www.nuvolio.com/plans","http://www.nuvolio.com/plans","http://www.nuvolio.com/plans","http://www.nuvolio.com/plans","http://www.nuvolio.com/plans","http://www.nuvolio.com/plans")
 
 //configure the speed of the slideshow, in miliseconds
 var slideshowspeed=3500

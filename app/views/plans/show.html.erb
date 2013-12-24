@@ -1,12 +1,53 @@
 
+<script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+<script>
+
+$(document).ready(function() {
+
+
+	$('#first').click(function(e){
+		e.preventDefault();
+		$('#picture').html($('#first').html());
+		$('#picture').show('slide', {
+			direction: "left"
+
+		}, 200);
+});
+
+$('#elevation').click(function(e){
+	e.preventDefault();
+		$('#picture').html($('#elevation').html());
+		$('#picture').show('slide', {
+			direction: "left"
+
+		}, 200);
+
+
+});
+
+$('#second').click(function(e){
+	e.preventDefault();
+		$('#picture').html($('#second').html());
+		$('#picture').show('slide', {
+			direction: "left"
+
+		}, 200);
+
+
+});
+	});
+
+
+</script>
 
 <p id="notice"><%= notice %></p>
 <div class="container">
-<div class="row">	
+<div class="row">
+
 <div id="plan" class="col-md-9">
-
-
-<center><%= link_to image_tag(@plan.drawing_1.url(:full)), @plan.drawing_1.url(:full), class: "lightbox_trigger" %></center>
+<div id="picture">
+<center><%= image_tag @plan.drawing_1.url %></center>
+</div>
 <br /><br />
 <% if @plan.price.blank? %>
 <center><h3>Price: $<%= (0.75 * @plan.sqfoot).to_i %> | <%= link_to "Purchase Now!", "#" %></h3></center>
@@ -85,17 +126,26 @@
 		 $ <%= (@plan.price * @plan.sqfoot).to_i %>
 		</p>
 		<% end %>
+		<div id="first">
+		<p><%= image_tag @plan.drawing_1.url(:full) %></p>
+	</div>
 		<% unless @plan.drawing_2.blank? %>				
 		<p>
 			<b>Secondary View:</b>
-			<%= link_to image_tag(@plan.drawing_2.url(:full)), @plan.drawing_2.url(:full), class: "lightbox_trigger" %>
+			<div id="second">
+			<%= image_tag(@plan.drawing_2.url(:full)) %>
+		</div>
 		</p>
+
 		<% end %>
-		<div class="img-responsive">
+
 		<p>
 			<b>Elevation View:</b>
-			<%= link_to image_tag(@plan.elevation.url(:full)), @plan.elevation.url(:full), class: "lightbox_trigger" %>
+			<div id="elevation">
+			<%= image_tag(@plan.elevation.url(:full)) %>
+			</div>
 		</p>
+
 </div>
 
    

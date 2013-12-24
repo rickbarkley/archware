@@ -20,7 +20,35 @@
 
 }
 
+#side-text {
+background:url(overlay.png) repeat;
+	color: #fff;
+	height: 100%;
+	padding:10px;
+	margin:10px;
+	border-radius:10px;
 
+}
+
+#side-text p {
+  text-align: center;
+  font-size:175%;
+  line-height: 1.5em;
+  font-family: "CrimsonRoman", "Times New Roman", Georgia, serif;
+
+  }
+
+#side-text li {
+	font-size:135%;
+	line-height: 1.5em;
+    font-family: "CrimsonRoman", "arial", Georgia, serif;
+}
+
+#side-text img {
+
+	border-radius: 10px;
+	text-align:center;
+}
 
 .header {
   display: table;
@@ -32,6 +60,7 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+
 }
 
 .header h1 {
@@ -54,6 +83,7 @@ letter-spacing: -2px;
   text-shadow: 3px 0px #000;
 
 }
+
 
 /* Services */
 
