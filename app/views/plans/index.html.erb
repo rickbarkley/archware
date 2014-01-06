@@ -62,7 +62,7 @@ function moveScroller() {
 </div>
 <div id="searchfield2" class="col-md-3">
 
-	<p><%= f.label :living_eq, "Living Areas" %></p>
+	<p><%= f.label :living_eq, "Living/Game Rooms" %></p>
 	<p><%= f.select(:living_eq, [['Not Sure', ''],['1', 1], ['2', 2],['3', 3],['4+', 4]]) %></p>	
 	
 	<p><%= f.label :dining_eq, "Dining Areas" %></p>
@@ -73,7 +73,7 @@ function moveScroller() {
 
 	
 	<p><%= f.label :stories_eq, "Levels/Design" %></p>
-	<p><%= f.select(:stories_eq, [['Not Sure', ''],['Single-Story', 'Single-Story'], ['Multi-Story', 'Multi-Story'],['Upside-Down', 'Upside-Down'],['Walk Out basement', 'Walk Out basement']]) %></p>
+	<p><%= f.select(:stories_eq, [['Not Sure', ''],['Single-Story', 1], ['Multi-Story', 2],['Upside-Down', 3],['Walk Out basement', 4]]) %></p>
 	
 	<%#<%= f.label :view_eq, "View" %>
     <%#<%= f.select(:view_eq, [['Front View 1st Floor', 1], ['Front View 2nd Floor', 2],['Rear View 1st Floor', 3],['Rear View 2nd Floor', 4]],{ :prompt => "Not Sure"}) %>
