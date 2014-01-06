@@ -73,13 +73,18 @@ function moveScroller() {
 
 	
 	<p><%= f.label :stories_eq, "Levels/Design" %></p>
-	<p><%= f.select(:stories_eq, [['Not Sure', ''],['Single-Story', 1], ['Multi-Story', 2],['Upside-Down', 3],['Walk Out basement', 4]]) %></p>
+	<p><%= f.select(:stories_eq, [['Not Sure', ''],['Single-Story', 1], ['Multi-Story', 2],['Upside-Down', 'Upside-Down'],['Walk Out Basement', 'Walk Out Basement']]) %></p>
 	
 	<%#<%= f.label :view_eq, "View" %>
     <%#<%= f.select(:view_eq, [['Front View 1st Floor', 1], ['Front View 2nd Floor', 2],['Rear View 1st Floor', 3],['Rear View 2nd Floor', 4]],{ :prompt => "Not Sure"}) %>
 	
 	<p><%= f.label :suite_eq, "Owners' Suite" %></p>
 	<p><%= f.select(:suite_eq, [['Not Sure', ''],['Primary Level', 1],['Secondary Level', 2]]) %></p>
+
+	<% if current_user.has_role? :admin %>
+	<p><%= f.label :name_cont, "Plan Name" %></p>
+	<p><%= f.text_field :name_cont %></p>
+	<% end %>
 <p>
   <%= f.submit class: "btn btn-primary" %>
 
