@@ -81,10 +81,6 @@ function moveScroller() {
 	<p><%= f.label :suite_eq, "Owners' Suite" %></p>
 	<p><%= f.select(:suite_eq, [['Not Sure', ''],['Primary Level', 1],['Secondary Level', 2]]) %></p>
 
-	<% if current_user.has_role? :admin %>
-	<p><%= f.label :name_cont, "Plan Name" %></p>
-	<p><%= f.text_field :name_cont %></p>
-	<% end %>
 <p>
   <%= f.submit class: "btn btn-primary" %>
 
