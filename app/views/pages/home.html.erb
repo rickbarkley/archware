@@ -65,14 +65,16 @@ $('#third').click(function(){
     	     
     	<div id="side-text" class="col-md-4 pull-right">
 			<h3>Nuvolio</h3>
-    		<p>Search Through 1000's of architectual plans and get a head start on your custom home!</p><br />
+    		<p><red>1000+</red>  Custom Designed Architectural <red>Floor Plans</red>
+by <em>Award Winning</em> Architects out of Austin, Texas</p>
     		<ul>
-    			<li>Award Winning Designs</li>
-    			<li>Austin/Hill Country Architecture</li>
-    			<li>Modern Style</li>
+    			
+    			<li>Buy your plan for a fraction of the cost</li>
+                <li>Cutting-edge custom designed floor plans</li>
+    			<li>Custom modifications available upon purchase.</li>
 
     		</ul>
-    		<p><br />Make your dream home a reality!</p>
+    		<p>Make your dream home a reality!</p>
     		<div id="first" class="col-md-4">
     			<%= image_tag "Exterior.jpg" %>
     		</div>
@@ -80,9 +82,10 @@ $('#third').click(function(){
     			<%= image_tag "LivingRoom.jpg" %>
     		</div>
     		<div id="third" class="col-md-4">
-    			<%= image_tag "Back2.jpg" %><br /><br />
+    			<%= image_tag "Back2.jpg" %><br />
     		</div>
-    		<p><center><a href="#about" class="btn btn-primary btn-lg">Find Out More</a></center></p>
+    		<p><center><a href="#about" class="btn btn-primary btn-lg">Find Out More</a></center>
+                <center><a href="#search" class="btn btn-primary btn-lg">Search Our Plans</a></center></p>
     	</div>
 
 		
@@ -92,59 +95,68 @@ $('#third').click(function(){
 
     <div class="reset span12"></div>
 <div id="about" class="more-info">
-	<h3>Nuvolio | Making building your next custom home easy!</h3>
+	<h3>Nuvolio | Make building your next custom home easy!</h3>
 	<p>Look around and check out our custom home plans.  If you like what you see, save it, email the plan to your friends for feedback, or purchase it!</p>
 	<p>When you purchase the plan you will be sent the <u>complete architectural</u> drawing and have everything you need to get started on your new custom home</p>
 <br />
 </div>
 
-<div id="services" class="services">
+    <!-- /Services -->
+
+    <div id="services" class="services">
       <div class="container">
         <div class="row">
           <div class="col-md-4 col-md-offset-4 text-center">
-            <h2>Our Services</h2>
+            <h2>What We Do</h2>
             <hr>
           </div>
         </div>
+        <div class="row">
+          <div class="col-md-3 text-center">
+            <div class="service-item"><a href="#search">
+              <i class="service-icon fa fa-home"></i>
+              <h3>Search for Custom Plans</h3>
+              <p><span>Search our database of over 1000 plans</span></p>
+                <p>Don't settle for what "Almost" works.  with our extensive plan listing you are sure to find exactly what you need</p></a>
+            </div>
+          </div>
+          <div class="col-md-3 text-center">
+            <div class="service-item"><a href="/about">
+              <i class="service-icon fa fa-envelope"></i>
+              <h3>Meet The Architects</h3>
+              <p><span>Have a question about a plan?</span></p>
+                <p>We can put you in contact with the plan's designer and make sure ALL your questions are answered.</p></a>
+            </div>
+          </div>
+          <div class="col-md-3 text-center">
+            <div class="service-item"><a href="/purchase_info">
+              <i class="service-icon fa fa-money"></i>
+              <h3>Purchase a plan</h3>
+              <p><span><u>Save</u> by purchasing an already completed plan</span></p>
+                <p>This is a unique opportunity to purchase a custom designed floor plan for substantially less than you would spend to design it from scratch.</p></a>
+            </div>
+          </div>
+          <div class="col-md-3 text-center">
+            <div class="service-item"><a href="/custom_mods">
+              <i class="service-icon fa fa-pencil-square-o"></i>
+              <h3>Custom Modification</h3>
+              <p><span>Have you found the right design, but need it adjusted?</span></p>
+                <p>No problem, your adjustments can be made by the at a reasonable hourly rate.</p> </a> 
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-md-offset-4 text-center">
+            <div id="search-scroll">
+            <h2><a href="#search"><i class="fa fa-level-down fa-3x"></i></a></h2>
+          </div>
+        </div>
 
-	<div class="col-md-2 col-md-offset-2 text-center">
-<div class="home-top1"> 
-
-<img src="/assets/mhouse.jpg">
-<h4><%= link_to "Search for Custom Plans", plans_path %></h4>
-<p><span>Search our database of over 1000 plans</span></p>
-<p>Don't settle for what "Almost" works.  with our extensive plan listing you are sure to find exactly what you need</p>
-</div>
-</div>
-<div class="col-md-2">
-<div class="home-top1">
-<img src="/assets/mhouse.jpg">
-<h4><%= link_to "Contact an Architect", plans_path %></h4>
-<p><span>Have a question about a plan?</span></p>
-<p>We can put you in contact with the plan's designer and make sure ALL your questions are answered.</p>
-</div>
-</div>
-<div class="col-md-2">
-<div class="home-top1">
-<img src="/assets/mhouse.jpg">
-<h4><%= link_to "Purchase a plan", plans_path %></h4>
-<p><span>Save by purchasing a completed plan</span></p>
-<p>Build the exact custom home you want in the price range you can afford. <%= link_to "Click for more details", contact_path %></p>
-</div>
-</div>
-<div class="col-md-2">
-<div class="home-top1">
-<img src="/assets/mhouse.jpg">
-<h4><%= link_to "Custom Modifications", plans_path %></h4>
-<p><span>Have you found the right design, but need it adjusted?</span></p>
-<p>No problem, your adjustments can be made by the at a reasonable hourly rate.  
-</p>
-</div>
-</div>
-</div>
-</div>
-
+      </div>
+    </div>
+    <!-- /Services -->
+<div id="search"></div>
 <br /><br />
+
 <div class="row">
 	<div class="container">
 
@@ -230,7 +242,7 @@ slideit()
 
 <div class="questions span12">
 	<h3>Still have questions?</h3>
-	<p>Check out our FAQ page or feel free to <%= link_to "Contact Us", contact_path %></p><br /><br />
+	<p>Check out our <%= link_to "FAQ page", "/questions" %> or feel free to <%= link_to "Contact Us", contact_path %></p><br /><br />
 </div>
 
 <!-- JavaScript -->

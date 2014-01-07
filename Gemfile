@@ -16,6 +16,7 @@ gem "ransack"
 gem 'rolify'
 gem "will_paginate", "~> 3.0.4"
 gem 'stripe'
+gem "font-awesome-rails"
 
 
 # Gems used only for assets and not required

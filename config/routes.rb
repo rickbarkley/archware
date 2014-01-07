@@ -17,6 +17,9 @@ EDesign::Application.routes.draw do
   match '/about', :to => 'pages#about'
   match '/contact', :to => 'pages#contact'
   match '/home', :to => 'pages#home'
+  match '/purchase_info', :to => 'pages#purchase_info'
+  match '/custom_mods', :to => 'pages#custom_mods'
+  match '/questions', :to => 'pages#questions'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

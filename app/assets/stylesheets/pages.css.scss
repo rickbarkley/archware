@@ -83,20 +83,50 @@ letter-spacing: -2px;
   text-shadow: 3px 0px #000;
 
 }
+red {
+  color: #8A0A0A;
+  font-size: 110% !important;
+}
 
 
 /* Services */
 
-#services {
+.services {
   background: #7fbbda;
   padding: 50px 0;
-  color: #000;
+  color: #fff;
+}
+.services a {
+
+  color: #fff !important;
 }
 
-#services h2 {
+.services a:hover {
+
+  color: #357EC7 !important;
+  text-decoration: none !important;
+}
+
+.services h2 {
 	color: #fff;
 	margin-right:-20px;
 }
+
+
+i.service-icon {
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  display: inline-block;
+  font-size: 56px;
+  width: 140px;
+  height: 140px;
+  line-height: 136px;
+  vertical-align: middle; 
+  text-align: center;
+}
+
+
+
 
 .home-top1 {
 min-width: 175px;
@@ -244,6 +274,11 @@ line-height: 1.3em;
 color: #666;
 }
 
+#design_visions{
+  background: #000;
+  border-radius: 5px;
+
+}
 
 
 
