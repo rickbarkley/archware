@@ -54,8 +54,8 @@ $('#second').click(function(e){
 <% else %>
 <center><h3>Price: $<%= (@plan.price * @plan.sqfoot).to_i %> | <%= link_to "Purchase Now!", new_plan_order_path(@plan) %></h3></center><br /><br />
 <h4><i class="purchase-icon fa fa-star"></i> <%= link_to "What Does My Purchase Include?", "/purchase_info" %></h4>
-<h4><i class="purchase-icon fa fa-star"></i> <%= link_to "frequently Asked Questions", "/questions" %></h4>
-<h4><i class="purchase-icon fa fa-star"></i> <%= link_to "What If I Want To Make Custom Modificatons To the Plan?", "/custom_mods" %></h4><br />
+<h4><i class="purchase-icon fa fa-star"></i> <%= link_to "Frequently Asked Questions", "/questions" %></h4>
+<h4><i class="purchase-icon fa fa-star"></i> <%= link_to "What If I Want To Make Custom Modificatons To The Plan?", "/custom_mods" %></h4><br />
 <% end %>
 
 	</div>
