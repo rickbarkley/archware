@@ -1,14 +1,19 @@
 <div class="container">
 	<div class="row">
-<h1><center>New order | <%= @order.plan.name %> | Amount: $<%= @order.plan.price * @order.plan.sqfoot %></center></h1><br /><br />
+		<div class="col-md-5">
+			<h1><center>New order | <%= @order.plan.name %> | Amount: $<%= @order.plan.price * @order.plan.sqfoot %></center></h1><br /><br />
 
-<%= render 'form' %>
+			<%= render 'form' %>
+		</div>
+		<div class="col-md-6">
 
-<h4><i class="purchase-icon fa fa-star"></i> <%= link_to "What Does My Purchase Include?", "/purchase_info" %></h4>
-<h4><i class="purchase-icon fa fa-star"></i> <%= link_to "frequently Asked Questions", "/questions" %></h4>
-<h4><i class="purchase-icon fa fa-star"></i> <%= link_to "What If I Want To Make Custom Modificatons To the Plan?", "/custom_mods" %></h4><br /><br />
 
-<%= link_to 'Back', plans_path(@plan) %>
+			<h4><i class="purchase-icon fa fa-star"></i> <%= link_to "What Does My Purchase Include?", "/purchase_info" %></h4>
+			<h4><i class="purchase-icon fa fa-star"></i> <%= link_to "frequently Asked Questions", "/questions" %></h4>
+			<h4><i class="purchase-icon fa fa-star"></i> <%= link_to "What If I Want To Make Custom Modificatons To the Plan?", "/custom_mods" %></h4><br /><br />
+		</div>
+
+<%= link_to 'Back', plans_path %>
 	</div>
 </div>
 
