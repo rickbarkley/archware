@@ -46,7 +46,7 @@ $('#second').click(function(e){
 
 <div id="plan" class="col-md-9">
 <div id="picture">
-<center><%= image_tag(plan.drawing_1.url(:full)) %></center>
+<center><%= image_tag(@plan.drawing_1.url(:full)) %></center>
 </div>
 <br /><br />
 <% if @plan.price.blank? %>
