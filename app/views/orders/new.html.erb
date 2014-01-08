@@ -1,11 +1,12 @@
 <div class="container">
 	<div class="row">
-		<div class="col-md-5">
+		<div class="col-md-12">
 			<h1><center>New order | <%= @order.plan.name %> | Amount: $<%= @order.plan.price * @order.plan.sqfoot %></center></h1><br /><br />
-
+		</div>
+		<div class="col-md-5">
 			<%= render 'form' %>
 		</div>
-		<div class="col-md-6">
+		<div class="col-md-7">
 
 
 			<h4><i class="purchase-icon fa fa-star"></i> <%= link_to "What Does My Purchase Include?", "/purchase_info" %></h4>
