@@ -94,9 +94,12 @@ margin-top: -15px;
   list-style: none;
 }
 #nnlogo {
+  display: block;
   text-align:center;
   margin-right:auto;
   margin-left:auto;
+  width:250px;
+  margin-top:-15px;
 }
 footer ul li {
   float: left;
