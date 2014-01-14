@@ -41,7 +41,7 @@
 <div id="row-two" class="col-md-3">
   <div class="field">
     <%= f.label :half_bath %><br />
-    <%= f.select :half_bath, options_for_select([[''],['1', 1], ['2', 2],['3+', 3]]), :class => 'select_field' %>
+    <%= f.select :half_bath, [['1', 1], ['2', 2],['3+', 3]],{ :prompt => "Not Sure"}) %>
   </div>
   <div class="field">
     <%= f.label :living %><br />
@@ -63,6 +63,10 @@
     <%= f.label :study2, "Plan has a Study" %>
     <%= f.select(:study2, [['Yes', 'Yes']],{ :prompt => "Not Sure"}) %>
     </div>
+      <div class="field">
+    <%= f.label :garage_loc, "Side Facing Garage" %>
+    <%= f.select(:garage_loc, [['Yes', 'Yes']],{ :prompt => "Not Sure"}) %>
+    </div>
 </div>
 	<div id="row-three" class="col-md-3">
   <div class="field">
@@ -79,7 +83,7 @@
   </div>
   <div class="field">
     <%= f.label :price %><br />
-    <%= f.select(:price, [['0.75', 0.75],['0.90', 0.90],['1.05', 1.05],['1.20', 1.20]]) %>
+    <%= f.select(:price, [['0.75', 0.75],['0.90', 0.90],['1.00', 1.00],['1.05', 1.05],['1.20', 1.20]]) %>
   </div>
   <div class="field">
     <%= f.label :style %><br />
@@ -87,7 +91,11 @@
   </div>
         <div class="field">
     <%= f.label :casita2, "Plan has a Casita" %>
-    <%= f.select(:casita2, [['Yes', 'Yes']],{ :prompt => "Not Sure"}) %><br /><br /><br />
+    <%= f.select(:casita2, [['Yes', 'Yes']],{ :prompt => "Not Sure"}) %>
+    </div>
+      <div class="field">
+    <%= f.label :quart, "Plan has a Courtyard" %>
+    <%= f.select(:quart, [['Yes', 'Yes']],{ :prompt => "Not Sure"}) %><br /><br /><br />
     </div>
 </div>
 <div id="row-four" class="col-md-3">
