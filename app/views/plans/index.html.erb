@@ -26,7 +26,13 @@ function moveScroller() {
 }
 </script>
 
-
+<script>
+$(document).ready(function() {
+$( "#filter" ).click(function() {
+  $( "#filter-search" ).toggle( "slow") 
+	});
+});
+</script>
 
 <div class="searchheading">
 <h2><center>Advanced Plan Search</center></h2><br />
@@ -38,58 +44,72 @@ function moveScroller() {
         <div class="row">	
 
 	  <div id="sidebar"> 
-	  <div id="scroller-anchor"></div> 
-	  <div id="scroller" style="margin-top:10px; width:960px"> 
+	  	<div id="scroller-anchor"></div> 
+	  		<div id="scroller" style="margin-top:10px; width:960px"> 
 
 
-<%= search_form_for @q do |f| %>
-<div id="searchfield" class="col-md-3">
-<p><%= f.label :sqfoot_gteq, "Square Footage Min" %></p>
-<p><%= f.text_field :sqfoot_gteq %></p>
-<p><%= f.label :sqfoot_lteq, "Square Footage Max" %></p>
-<p><%= f.text_field :sqfoot_lteq %></p>
+				<%= search_form_for @q do |f| %>
+					<div id="searchfield" class="col-md-3">
+						<p><%= f.label :sqfoot_gteq, "Square Footage Min" %></p>
+						<p><%= f.text_field :sqfoot_gteq %></p>
+						<p><%= f.label :sqfoot_lteq, "Square Footage Max" %></p>
+						<p><%= f.text_field :sqfoot_lteq %></p>
 
-<p><%= f.label :bedrooms_eq, "Bedrooms" %></p>
-<p><%= f.select(:bedrooms_eq, [['Not Sure', ''],['1', 1], ['2', 2],['3', 3],['4', 4],['5', 5],['6+', 6]]) %></p>
-                                
+						<p><%= f.label :bedrooms_eq, "Bedrooms" %></p>
+						<p><%= f.select(:bedrooms_eq, [['Not Sure', ''],['1', 1], ['2', 2],['3', 3],['4', 4],['5', 5],['6+', 6]]) %></p>
+						                                
 
-  <p><%= f.label :bathrooms_eq, "Bathrooms" %></p>
-<p><%= f.select(:bathrooms_eq, [['Not Sure', ''],['1', 1], ['2', 2],['3', 3],['4+', 4]]) %></p>
+						  <p><%= f.label :bathrooms_eq, "Bathrooms" %></p>
+						<p><%= f.select(:bathrooms_eq, [['Not Sure', ''],['1', 1], ['2', 2],['3', 3],['4+', 4]]) %></p>
 
 
-	  <p><%= f.label :half_bath_eq, "Half-Bathrooms" %></p>
-	<p><%= f.select(:half_bath_eq, [['Not Sure', ''],['1', 1], ['2', 2],['3+', 3]]) %></p>
-</div>
-<div id="searchfield2" class="col-md-3">
+							  <p><%= f.label :half_bath_eq, "Half-Bathrooms" %></p>
+							<p><%= f.select(:half_bath_eq, [['Not Sure', ''],['1', 1], ['2', 2],['3+', 3]]) %></p>
+							<div id="filter">
+								<div class="btn btn-primary">Show Filters</div><br />
+								<div id="filter-search">
+									<p><%= f.label :suite_eq, "Owners' Suite" %>
+									<%= f.select(:suite_eq, [['Not Sure', ''],['Primary Level', 1],['Secondary Level', 2]]) %></p>
+									    <p><%= f.label :media2_eq, "Media Room" %>
+    									<%= f.select(:media2_eq, [['No', ''],['Yes', 'Yes']]) %>
+									    <p><%= f.label :study2_eq, "Study" %>
+    									<%= f.select(:study2_eq, [['No', ''],['Yes', 'Yes']]) %></p>
+    									<p><%= f.label :casita2_eq, "Casita" %>
+    									<%= f.select(:casita2_eq, [['No', ''],['Yes', 'Yes']]) %></p>  
+    									<%= f.submit "Apply Filters", class: "btn btn-primary" %> 									
+								</div>
+							</div>
+					</div>
+					<div id="searchfield2" class="col-md-3">
 
-	<p><%= f.label :living_eq, "Living/Game Rooms" %></p>
-	<p><%= f.select(:living_eq, [['Not Sure', ''],['1', 1], ['2', 2],['3', 3],['4+', 4]]) %></p>	
-	
-	<p><%= f.label :dining_eq, "Dining Areas" %></p>
-	<p><%= f.select(:dining_eq, [['Not Sure', ''],['1', 1], ['2', 2],['3', 3],['4+', 4]]) %></p>
-	
-	<p><%= f.label :garage_eq, "Number of Garages" %></p>
-	<p><%= f.select(:garage_eq, [['Not Sure', ''],['0', 1],['1', 2], ['2', 3],['3', 4],['4+', 5]]) %></p>
+						<p><%= f.label :living_eq, "Living/Game Rooms" %></p>
+						<p><%= f.select(:living_eq, [['Not Sure', ''],['1', 1], ['2', 2],['3', 3],['4+', 4]]) %></p>	
+						
+						<p><%= f.label :dining_eq, "Dining Areas" %></p>
+						<p><%= f.select(:dining_eq, [['Not Sure', ''],['1', 1], ['2', 2],['3', 3],['4+', 4]]) %></p>
+						
+						<p><%= f.label :garage_eq, "Number of Garages" %></p>
+						<p><%= f.select(:garage_eq, [['Not Sure', ''],['0', 1],['1', 2], ['2', 3],['3', 4],['4+', 5]]) %></p>
 
-	
-	<p><%= f.label :stories_eq, "Levels/Design" %></p>
-	<p><%= f.select(:stories_eq, [['Not Sure', ''],['Single-Story', 1], ['Multi-Story', 2],['Upside-Down', 'Upside-Down'],['Walk Out Basement', 'Walk Out Basement']]) %></p>
-	
-	<%#<%= f.label :view_eq, "View" %>
-    <%#<%= f.select(:view_eq, [['Front View 1st Floor', 1], ['Front View 2nd Floor', 2],['Rear View 1st Floor', 3],['Rear View 2nd Floor', 4]],{ :prompt => "Not Sure"}) %>
-	
-	<p><%= f.label :suite_eq, "Owners' Suite" %></p>
-	<p><%= f.select(:suite_eq, [['Not Sure', ''],['Primary Level', 1],['Secondary Level', 2]]) %></p>
+						
+						<p><%= f.label :stories_eq, "Levels/Design" %></p>
+						<p><%= f.select(:stories_eq, [['Not Sure', ''],['Single-Story', 1], ['Multi-Story', 2],['Upside-Down', 'Upside-Down'],['Walk Out Basement', 'Walk Out Basement']]) %></p>
+						
+						<%#<%= f.label :view_eq, "View" %>
+					    <%#<%= f.select(:view_eq, [['Front View 1st Floor', 1], ['Front View 2nd Floor', 2],['Rear View 1st Floor', 3],['Rear View 2nd Floor', 4]],{ :prompt => "Not Sure"}) %>
+						
+						<p><%= f.label :style_eq, "Style" %></p>
+    					<p><%= f.select(:style_eq, [['Not Sure', ''],['Hill country', 'Hill country'],[' Hill country modern', 'Hill country modern'],['Modern', 'Modern'],['Craftsman', 'Craftsman'],['Texas Tuscan', 'Texas Tuscan'],['Mediterranean', 'Mediterranean'],['Spanish', 'Spanish'],['Contemporary', 'Contemporary'],['French', 'French'],['French Country', 'French Country'],['Beach', 'Beach'],['Cottage', 'Cottage'],['Barn', 'Barn']]) %></p>
 
-<p>
-  <%= f.submit class: "btn btn-primary" %>
+						<p>
+							<%= f.submit class: "btn btn-primary" %>
 
-<%= link_to "Start Over", plans_path, class: "btn btn-primary" %></p><br /><br /><br />
-</div>
-
-<% end %>
-  </div>
-</div>
+							<%= link_to "Start Over", plans_path, class: "btn btn-primary" %>
+						</p><br /><br /><br />
+					</div>
+				<% end %>
+  			</div>
+		</div>
 
 <script type="text/javascript"> 
 if(screen.width >= 480){
@@ -101,8 +121,9 @@ if(screen.width >= 480){
 
 <!-- end search function for DT/LT devices -->
 
-
+<center><p><b><red><%= @plans.count %> Plans Match Your Criteria</red></b></p></center>
 <%= will_paginate @plans %>
+
 
     <% @plans.each do |plan| %>
 <div id="image" class="col-md-6">	
