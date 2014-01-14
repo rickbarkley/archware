@@ -103,8 +103,8 @@ $( "#filter" ).click(function() {
 						
 						<p><%= f.label :style_eq, "Style" %></p>
     					<p><%= f.select(:style_eq, [['Not Sure', ''],['Hill country', 'Hill country'],[' Hill country modern', 'Hill country modern'],['Modern', 'Modern'],['Craftsman', 'Craftsman'],['Texas Tuscan', 'Texas Tuscan'],['Mediterranean', 'Mediterranean'],['Spanish', 'Spanish'],['Contemporary', 'Contemporary'],['French', 'French'],['French Country', 'French Country'],['Beach', 'Beach'],['Cottage', 'Cottage'],['Barn', 'Barn']]) %></p>
-    						<%= f.label :name_cont, "Search for Plan" %>
-							<%= f.text_field :name_cont %> 
+    						<p><%= f.label :name_cont, "Search for Plan" %></p>
+							<p><%= f.text_field :name_cont %></p> 
 
 						<p>
 							<%= f.submit class: "btn btn-primary" %>
