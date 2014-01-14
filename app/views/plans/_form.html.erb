@@ -37,6 +37,10 @@
     <%= f.label :media2, "Plan has a Media Room" %>
     <%= f.select(:media2, [['Yes', 'Yes']],{ :prompt => "Not Sure"}) %>
     </div>
+      <div class="field">
+    <%= f.label :quart, "Plan has a Courtyard" %>
+    <%= f.select(:quart, [['Yes', 'Yes']],{ :prompt => "Not Sure"}) %><br /><br /><br />
+    </div>
 </div>
 <div id="row-two" class="col-md-3">
   <div class="field">
@@ -92,10 +96,6 @@
         <div class="field">
     <%= f.label :casita2, "Plan has a Casita" %>
     <%= f.select(:casita2, [['Yes', 'Yes']],{ :prompt => "Not Sure"}) %>
-    </div>
-      <div class="field">
-    <%= f.label :quart, "Plan has a Courtyard" %>
-    <%= f.select(:quart, [['Yes', 'Yes']],{ :prompt => "Not Sure"}) %><br /><br /><br />
     </div>
 </div>
 <div id="row-four" class="col-md-3">
