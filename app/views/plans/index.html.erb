@@ -75,7 +75,9 @@ $( "#filter" ).click(function() {
 									    <p><%= f.label :study2_eq, "Study" %>
     									<%= f.select(:study2_eq, [['No', ''],['Yes', 'Yes']]) %></p>
     									<p><%= f.label :casita2_eq, "Casita" %>
-    									<%= f.select(:casita2_eq, [['No', ''],['Yes', 'Yes']]) %></p>  
+    									<%= f.select(:casita2_eq, [['No', ''],['Yes', 'Yes']]) %></p> 
+    									<%= f.label :name_cont, "Search for Plan" %>
+										<%= f.text_field :name_cont %> 
     									<%= f.submit "Apply Filters", class: "btn btn-primary" %> 									
 								</div>
 							</div>
