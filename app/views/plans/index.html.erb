@@ -131,6 +131,7 @@ if(screen.width >= 480){
 <!-- end search function for DT/LT devices -->
 
 <center><p><b><red><%= @plans.count %> Plans Match Your Criteria</red></b></p></center>
+<p>Sort By: <%= link_to "Square Footage", :sort => "sqfoot" %> | <%= link_to "Price", :sort => "price" %> | <%= link_to "Number of Bedrooms", :sort => "bedrooms" %></p>
 <%= will_paginate @plans %>
 
 
