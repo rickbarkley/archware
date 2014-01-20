@@ -30,6 +30,7 @@ function moveScroller() {
 $(document).ready(function() {
 $( "#filter" ).click(function() {
   $( "#filter-search" ).toggle( "slow") 
+  $("#search").toggle("slow")
 	});
 });
 </script>
@@ -50,24 +51,24 @@ $( "#filter" ).click(function() {
 
 				<%= search_form_for @q do |f| %>
 					<div id="searchfield" class="col-md-3">
-						<p><%= f.label :sqfoot_gteq, "Square Footage Min" %></p>
-						<p><%= f.text_field :sqfoot_gteq %></p>
-						<p><%= f.label :sqfoot_lteq, "Square Footage Max" %></p>
-						<p><%= f.text_field :sqfoot_lteq %></p>
+						<div id="search">
+							<p><%= f.label :sqfoot_gteq, "Square Footage Min" %></p>
+							<p><%= f.text_field :sqfoot_gteq %></p>
+							<p><%= f.label :sqfoot_lteq, "Square Footage Max" %></p>
+							<p><%= f.text_field :sqfoot_lteq %></p>
 
-						<p><%= f.label :bedrooms_eq, "Bedrooms" %></p>
-						<p><%= f.select(:bedrooms_eq, [['Not Sure', ''],['1', 1], ['2', 2],['3', 3],['4', 4],['5', 5],['6+', 6]]) %></p>
-						                                
+							<p><%= f.label :bedrooms_eq, "Bedrooms" %></p>
+							<p><%= f.select(:bedrooms_eq, [['Not Sure', ''],['1', 1], ['2', 2],['3', 3],['4', 4],['5', 5],['6+', 6]]) %></p>
+							                                
 
-						  <p><%= f.label :bathrooms_eq, "Bathrooms" %></p>
-						<p><%= f.select(:bathrooms_eq, [['Not Sure', ''],['1', 1], ['2', 2],['3', 3],['4+', 4]]) %></p>
-						<p><%= f.label :stories_eq, "Levels/Design" %></p>
-						<p><%= f.select(:stories_eq, [['Not Sure', ''],['Single-Story', 1], ['Multi-Story', 2],['Upside-Down', 'Upside-Down'],['Walk Out Basement', 'Walk Out Basement']]) %></p>
-
-							  <p><%= f.label :half_bath_eq, "Half-Bathrooms" %></p>
-							<p><%= f.select(:half_bath_eq, [['Not Sure', ''],['1', 1], ['2', 2],['3+', 3]]) %></p>
+							<p><%= f.label :bathrooms_eq, "Bathrooms" %></p>
+							<p><%= f.select(:bathrooms_eq, [['Not Sure', ''],['1', 1], ['2', 2],['3', 3],['4+', 4]]) %></p>
+							<p><%= f.label :stories_eq, "Levels/Design" %></p>
+							<p><%= f.select(:stories_eq, [['Not Sure', ''],['Single-Story', 1], ['Multi-Story', 2],['Upside-Down', 'Upside-Down'],['Walk Out Basement', 'Walk Out Basement']]) %></p>
+						</div>
 							<div id="filter">
-								<div class="btn btn-primary">Show Filters</div><br />
+								<div class="btn btn-primary">Toggle Filters</div><br />
+							</div>
 								<div id="filter-search">
 									<p><%= f.label :suite_eq, "Owners' Suite" %>
 									<%= f.select(:suite_eq, [['Not Sure', ''],['Primary Level', 1],['Secondary Level', 2]]) %></p>
@@ -79,10 +80,11 @@ $( "#filter" ).click(function() {
     									<%= f.select(:study2_eq, [['No', ''],['Yes', 'Yes']]) %></p>
     									<p><%= f.label :casita2_eq, "Casita" %>
     									<%= f.select(:casita2_eq, [['No', ''],['Yes', 'Yes']]) %></p> 
-    									<%= f.submit "Apply Filters", class: "btn btn-primary" %> 									
+    									<p><%= f.label :name_cont, "Search for Plan" %></p>
+										<p><%= f.text_field :name_cont %></p>  									
 								</div>
 							</div>
-					</div>
+
 					<div id="searchfield2" class="col-md-3">
 
 						<p><%= f.label :living_eq, "Living/Game Rooms" %></p>
@@ -103,13 +105,15 @@ $( "#filter" ).click(function() {
 						
 						<p><%= f.label :style_eq, "Style" %></p>
     					<p><%= f.select(:style_eq, [['Not Sure', ''],['Hill country', 'Hill country'],[' Hill country modern', 'Hill country modern'],['Modern', 'Modern'],['Craftsman', 'Craftsman'],['Texas Tuscan', 'Texas Tuscan'],['Mediterranean', 'Mediterranean'],['Spanish', 'Spanish'],['Contemporary', 'Contemporary'],['French', 'French'],['French Country', 'French Country'],['Beach', 'Beach'],['Cottage', 'Cottage'],['Barn', 'Barn'], ['traditional', 'traditional']]) %></p>
-    						<p><%= f.label :name_cont, "Search for Plan" %></p>
-							<p><%= f.text_field :name_cont %></p> 
 
 						<p>
 							<%= f.submit class: "btn btn-primary" %>
-
 							<%= link_to "Start Over", plans_path, class: "btn btn-primary" %>
+							<% if user_signed_in? %>
+								<% if current_user.has_role? :admin %>
+									<%= link_to 'New Plan', new_plan_path, class: "btn btn-large btn-primary" %><br /><br />
+								<% end %>
+							<% end %>
 						</p><br /><br /><br />
 					</div>
 				<% end %>
@@ -156,13 +160,7 @@ if(screen.width >= 480){
 <%= will_paginate @plans %>
 </div>
 <br />
-<% if user_signed_in? %>
-<% if current_user.has_role? :admin %>
-<div class="col-md-4">
-<%= link_to 'New Plan', new_plan_path, class: "btn btn-large btn-primary" %><br /><br />
-</div>
-<% end %>
-<% end %>
+
 
 </div>
 </div>

@@ -215,10 +215,11 @@ jQuery(document).ready(function($) {
 	<p><INPUT Type="button" VALUE="Back To Search" onClick="history.go(-1);return true;"></p>
 	</back>
 	<% if user_signed_in? %>
-	<% if current_user.has_role? :admin %>
-<%= link_to 'Edit', edit_plan_path(@plan), class: "btn btn-large btn-primary" %> <br />
-<% end %>
-<% end %>
+		<% if current_user.has_role? :admin %>
+		<%= link_to 'Edit', edit_plan_path(@plan), class: "btn btn-large btn-primary" %> 
+		<%= link_to 'New Plan', new_plan_path, class: "btn btn-large btn-primary" %> <br />
+		<% end %>
+	<% end %>
 
 	<br /><br /><br /><br />
 </div>

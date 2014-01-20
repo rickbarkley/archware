@@ -8,7 +8,7 @@
     <script src="https://code.jquery.com/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <title><%= content_for?(:title) ? yield(:title) : "nuvolio" %></title>
-    <%= javascript_include_tag "https://js.stripe.com/v2/", "application", "bootstrap.js" %>
+    <%= javascript_include_tag "https://js.stripe.com/v2/", "application" %>
     <%= csrf_meta_tags %>
     <%= tag :meta, :name => "stripe-key", :content => STRIPE_PUBLIC_KEY %>
 
@@ -39,7 +39,6 @@
     <!-- Size should be 32 x 32 pixels -->
     <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
 
-    <%= javascript_include_tag "application", "bootstrap" %>
   </head>
   <body>
 
