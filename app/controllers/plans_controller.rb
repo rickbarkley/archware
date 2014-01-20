@@ -5,7 +5,8 @@ class PlansController < ApplicationController
   def index
 
     @q = Plan.search(params[:q])
-    @plans = @q.result(distinct: true).order(params[:sort]).paginate(:page => params[:page], :per_page => 10)
+    @plans = @q.result(distinct: true).paginate(:page => params[:page], :per_page => 10)
+    @q.build_sort if @q.sorts.empty?
 
     respond_to do |format|
       format.html # index.html.erbs
@@ -89,4 +90,5 @@ class PlansController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 end
