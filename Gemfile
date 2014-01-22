@@ -20,6 +20,7 @@ gem "font-awesome-rails"
 gem 'contact_us'
 gem 'formtastic'
 gem 'active_attr'
+gem "figaro"
 
 
 # Gems used only for assets and not required
