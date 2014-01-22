@@ -17,6 +17,9 @@ gem 'rolify'
 gem "will_paginate", "~> 3.0.4"
 gem 'stripe'
 gem "font-awesome-rails"
+gem 'contact_us'
+gem 'formtastic'
+gem 'active_attr'
 
 
 # Gems used only for assets and not required

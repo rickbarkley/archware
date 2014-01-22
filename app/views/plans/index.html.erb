@@ -57,9 +57,26 @@ $( "#filter" ).click(function() {
 							<p><%= f.label :sqfoot_lteq, "Square Footage Max" %></p>
 							<p><%= f.text_field :sqfoot_lteq %></p>
 
-							<p><%= f.label :bedrooms_eq, "Bedrooms" %></p>
-							<p><%= f.select(:bedrooms_eq, [['Not Sure', ''],['1', 1], ['2', 2],['3', 3],['4', 4],['5', 5],['6+', 6]]) %></p>
-							                                
+							
+							<p><%= f.label :bedrooms_eq, "Bedrooms" %><br />
+
+
+    						1 <%= check_box_tag "q[bedrooms_in][]", "1" %>
+							2 <%= check_box_tag "q[bedrooms_in][]", "2" %>
+							3 <%= check_box_tag "q[bedrooms_in][]", "3" %>
+							4 <%= check_box_tag "q[bedrooms_in][]", "4" %>
+							5 <%= check_box_tag "q[bedrooms_in][]","5", params[:q]&& params[:q][:bedrooms_in] == "5", :multip => true  %>
+							6+ <%= check_box_tag "q[bedrooms_in][]", "6+", params[:q]&& params[:q][:bedrooms_in] == "6+", :multip => true  %></p>
+
+							<!--
+							
+							<%= f.collection_select :bedrooms_in, Plan.all, :bedrooms, :bedrooms, {}, {:multiple => true} %>
+							
+							<p><%= f.select(:bedrooms_in, [['1', 1], ['2', 2],['3', 3],['4+', 4]],{},
+                                   { :multiple => true, :size => 2, :class => "mselectfield" }
+                                 )%></p>
+							
+							  -->                              
 
 							<p><%= f.label :bathrooms_eq, "Bathrooms" %></p>
 							<p><%= f.select(:bathrooms_eq, [['Not Sure', ''],['1', 1], ['2', 2],['3', 3],['4+', 4]]) %></p>

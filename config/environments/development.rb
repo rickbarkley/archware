@@ -16,7 +16,7 @@ EDesign::Application.configure do
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
   # Don't care if the mailer can't send
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
@@ -39,4 +39,24 @@ EDesign::Application.configure do
   
   #paperclip settings
   Paperclip.options[:command_path] = "/usr/local/bin/"
+
+  config.action_mailer.smtp_settings = {
+    address: "smtp.critsend.com",
+    port: 587,
+    domain: "localhost",
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: "Jonathan_Schober@Nuvola-Networks.com",
+    password: "CzAi0W5veosUFNs"
+  }
+
+
+  #config.action_mailer.default_url_options = { :host => 'example.com' }
+  # ActionMailer Config
+  # Setup for production - deliveries, no errors raised
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+
+  config.action_mailer.default :charset => "utf-8"
+
 end

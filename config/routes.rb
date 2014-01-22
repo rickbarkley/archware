@@ -1,4 +1,8 @@
 EDesign::Application.routes.draw do
+  get "message/new"
+
+  get "message/create"
+
      resources :orders
   devise_for :users
 
@@ -8,6 +12,7 @@ EDesign::Application.routes.draw do
 
 
   resources :pages
+  resources :messages
   get "pages/home"
 
   get "pages/about"
@@ -15,17 +20,18 @@ EDesign::Application.routes.draw do
   get "pages/contact"
   root :to => 'pages#home'
   match '/about', :to => 'pages#about'
-  match '/contact', :to => 'pages#contact'
+  #match '/contact', :to => 'messages#new'
   match '/home', :to => 'pages#home'
   match '/purchase_info', :to => 'pages#purchase_info'
   match '/custom_mods', :to => 'pages#custom_mods'
   match '/questions', :to => 'pages#questions'
+  match '/contact', :to => 'contact_us/contacts#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
   # Sample of regular route:
-  #   match 'products/:id' => 'catalog#view'
+  #  match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
 
   # Sample of named route:

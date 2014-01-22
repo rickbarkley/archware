@@ -1,0 +1,12 @@
+<div class="container">
+	<div class ="row">
+<h2><center><%= t('.contact_us') %></center></h2><br />
+<%= semantic_form_for @contact, :url => contacts_path do |f| %>
+  <p>Name: <%= f.text_field :name, :label => t('.name') if ContactUs.require_name %></p>
+  <p>Email: <%= f.text_field :email %></p>
+  <%= f.input :subject, :label => t('.subject') if ContactUs.require_subject %>
+  <p>Message:</p> <p><%= f.text_area :message %></p><br />
+  <%= f.action :submit, :label => t('.submit'), :button_html => { :alt => t('.submit'), :id => 'contact_us_contact_submit', :title => t('.submit') } %><br /><br />
+<% end %>
+</div>
+</div>
