@@ -202,19 +202,22 @@ color: #666;
 }
 .slideshow img{
 border: 2px solid #888;
+-webkit-border-radius: 6px 6px 6px 6px;
+ -moz-border-radius: 6px 6px 6px 6px;
+ border-radius: 6px 6px 6px 6px;
 text-align: center;
 
 }
 #pic img {
 
 border: 2px solid #800000;
-
 box-shadow: 0px 0px 0px #000 !important;
 margin-bottom: 20px;
 -webkit-border-radius: 6px 6px 6px 6px;
  -moz-border-radius: 6px 6px 6px 6px;
  border-radius: 6px 6px 6px 6px;
 }
+
 #pic li {
 color: #800000 !important;
 }
