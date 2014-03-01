@@ -3,24 +3,34 @@
 <h2><center><%= t('.contact_us') %></center></h2><br />
 
 <br />
-<p>Thank you for your interest!  If scheduling a consultation with one of our architects, please include the following:</p>
-<br />
-<P>
-<ul>
-  <li>List the plan(s) to be discussed.</li>
-  <li>Specify Meeting Length if interested in a consultation</li>
-  <li>Specify your preferred meeting time and we do our best to accommodate you: M – F  - 8am to 5pm Central.</li>
-  <li>Please list your initial questions</li>
-  <li>Feel free to send us your survey and other pertinent documents so that the architect can refer to them during your consultation.</li>
-</ul>
-</p>
+<div class="col-md-6">
+	<p>Thank you for your interest!  If scheduling a consultation with one of our architects, please include the following:</p>
+	<br />
+	<P>
+	<ul>
+	  <li>List the plan(s) to be discussed.</li>
+	  <li>Specify Meeting Length if interested in a consultation</li>
+	  <li>Specify your preferred meeting time and we do our best to accommodate you: M – F  - 8am to 5pm Central.</li>
+	  <li>Please list your initial questions</li>
+	  <li>Feel free to send us your survey and other pertinent documents so that the architect can refer to them during your consultation.</li>
+	</ul>
+	</p>
+	<br />
+	<center><h3>Nuvolio</h3>
+<p>18592 FM 1431</p>
+<p>Jonestown, Texas 78645</p>
+<p>(512) 698-8913</p>
+<p><%= mail_to "rick@architectware.com", "rick@architectware.com" %></center><br />
+</div>
 <br /><br />
-<%= semantic_form_for @contact, :url => contacts_path do |f| %>
-  <p>Name: <%= f.text_field :name, :label => t('.name') if ContactUs.require_name %></p>
-  <p>Email: <%= f.text_field :email %></p>
-  <%= f.input :subject, :label => t('.subject') if ContactUs.require_subject %>
-  <p>Message:</p> <p><%= f.text_area :message %></p><br />
-  <%= f.action :submit, :label => t('.submit'), :button_html => { :alt => t('.submit'), :id => 'contact_us_contact_submit', :title => t('.submit') } %><br /><br />
-<% end %>
+<div class="col-md-5"
+	<%= semantic_form_for @contact, :url => contacts_path do |f| %>
+	  <p>Name: <%= f.text_field :name, :label => t('.name') if ContactUs.require_name %></p>
+	  <p>Email: <%= f.text_field :email %></p>
+	  <%= f.input :subject, :label => t('.subject') if ContactUs.require_subject %>
+	  <p>Message:</p> <p><%= f.text_area :message %></p><br />
+	  <p><%= f.action :submit, :label => t('.submit'), :button_html => { :alt => t('.submit'), :id => 'contact_us_contact_submit', :title => t('.submit') } %></p><br /><br />
+	<% end %>
+</div>
 </div>
 </div>
