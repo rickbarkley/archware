@@ -40,6 +40,13 @@ EDesign::Application.configure do
   #paperclip settings
   Paperclip.options[:command_path] = "/usr/local/bin/"
 
+  # ActionMailer Config
+  # Setup for production - deliveries, no errors raised
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default :charset => "utf-8"
+
 
   config.action_mailer.smtp_settings = {
     address: "smtp.critsend.com",
@@ -52,13 +59,8 @@ EDesign::Application.configure do
   }
 
 
-  config.action_mailer.default_url_options = { :host => 'example.com' }
+  config.action_mailer.default_url_options = { :host => 'nuvolio.com' }
   config.mailer_sender = "info@nuvola-networks.com"
-  # ActionMailer Config
-  # Setup for production - deliveries, no errors raised
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default :charset => "utf-8"
+
 
 end
