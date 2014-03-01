@@ -22,13 +22,13 @@
 <p>(512) 698-8913</p>
 <p><%= mail_to "rick@architectware.com", "rick@architectware.com" %></center><br />
 </div>
-<br /><br />
-<div class="col-md-5"
+
+<div class="col-md-5">
 	<%= semantic_form_for @contact, :url => contacts_path do |f| %>
-	  <p>Name: <%= f.text_field :name, :label => t('.name') if ContactUs.require_name %></p>
-	  <p>Email: <%= f.text_field :email %></p>
+	  <p><b>Name:</b> <%= f.text_field :name, :label => t('.name') if ContactUs.require_name %></p>
+	  <p><b>Email:</b> <%= f.text_field :email %></p>
 	  <%= f.input :subject, :label => t('.subject') if ContactUs.require_subject %>
-	  <p>Message:</p> <p><%= f.text_area :message %></p><br />
+	  <p><b>Message:</b></p> <p><%= f.text_area :message %></p><br />
 	  <p><%= f.action :submit, :label => t('.submit'), :button_html => { :alt => t('.submit'), :id => 'contact_us_contact_submit', :title => t('.submit') } %></p><br /><br />
 	<% end %>
 </div>
