@@ -1,3 +1,3 @@
 class ContactMailer < ActionMailer::Base
-  default from: "from@example.com"
+  default from: "rick@architectware"
 end
