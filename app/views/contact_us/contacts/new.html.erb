@@ -1,4 +1,17 @@
 <h2><%= t('.contact_us') %></h2>
+<br />
+<p>Thank you for your interest!  If interested in scheduling  a consultation with one of our architects, please include the following:</p>
+<br />
+<P>
+<ul>
+  <li>List the plan(s) to be discussed.</li>
+  <li>Specify Meeting Length if interested in a consultation</li>
+  <li>Specify your preferred meeting time and we do our best to accommodate you: M – F  - 8am to 5pm Central.</li>
+  <li>Please list your initial questions</li>
+  <li>Feel free to send us your survey and other pertinent documents so that the architect can refer to them during your consultation.</li>
+</ul>
+</p>
+<br /><br />
 <%= form_for @contact, :url => contacts_path, :html => {:class => 'formtastic'} do |f| %>
   <% if ContactUs.require_name %>
     <li class='string required' id='contact_us_contact_name_input'>
@@ -32,7 +45,7 @@
       <p class='inline-error'><%= f.object.errors[:message].join(' and ') %></p>
     <% end %>
   </li>
-  <li class='commit'>
+  <p class='commit'>
     <%= f.submit :submit, :alt => t('.submit'), :class => 'submit create', :label => t('.submit'), :title => t('.submit') %>
-  </li>
+  </p>
 <% end %>
