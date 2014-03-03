@@ -46,7 +46,7 @@ $('#second').click(function(e){
 
 <div id="plan" class="col-md-9">
 <div id="picture">
-<center><%= image_tag(@plan.drawing_1.url(:full)) %></center>
+<center><%= link_to image_tag(@plan.drawing_1.url(:full)), @plan.drawing_1.url(:full) %></center>
 </div>
 <br /><br />
 <% if @plan.price.blank? %>
@@ -130,13 +130,13 @@ $('#second').click(function(e){
 		</p>
 		<% end %>
 		<div id="first">
-		<p><%= image_tag @plan.drawing_1.url(:full) %></p>
+		<p><%= link_to image_tag(@plan.drawing_1.url(:full)), @plan.drawing_1.url(:full) %></p>
 	</div>
 		<% unless @plan.drawing_2.blank? %>				
 		<p>
 			<b>Secondary View:</b>
 			<div id="second">
-			<%= image_tag(@plan.drawing_2.url(:full)) %>
+			<%= link_to image_tag(@plan.drawing_2.url(:full)), @plan.drawing_2.url(:full) %>
 		</div>
 		</p>
 
@@ -145,7 +145,7 @@ $('#second').click(function(e){
 		<p>
 			<b>Elevation View:</b>
 			<div id="elevation">
-			<%= image_tag(@plan.elevation.url(:full)) %>
+			<%= link_to image_tag(@plan.elevation.url(:full)), @plan.elevation.url(:full) %>
 			</div>
 		</p>
 

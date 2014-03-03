@@ -80,23 +80,24 @@ $( "#filter" ).click(function() {
 
 							<p><%= f.label :bathrooms_eq, "Bathrooms" %></p>
 							<p><%= f.select(:bathrooms_eq, [['Not Sure', ''],['1', 1], ['2', 2],['3', 3],['4+', 4]]) %></p>
-							<p><%= f.label :stories_eq, "Levels/Design" %></p>
-							<p><%= f.select(:stories_eq, [['Not Sure', ''],['Single-Story', 1], ['Multi-Story', 2],['Upside-Down', 'Upside-Down'],['Walk Out Basement', 'Walk Out Basement']]) %></p>
+							<p><%= f.label :half_bath_eq, "Half-Bathrooms" %>
+							<%= f.select(:half_bath_eq, [['Not Sure', ''],['1', 1], ['2', 2],['3+', 3]]) %></p>
 						</div>
 							<div id="filter">
-								<div class="btn btn-primary">Toggle Filters</div><br />
+								<div class="btn btn-primary">Toggle More Options</div><br />
 							</div>
 								<div id="filter-search">
-									<p><%= f.label :suite_eq, "Owners' Suite" %>
+									<br /><p><%= f.label :suite_eq, "Owners' Suite" %>
 									<%= f.select(:suite_eq, [['Not Sure', ''],['Primary Level', 1],['Secondary Level', 2]]) %></p>
-										<p><%= f.label :half_bath_eq, "Half-Bathrooms" %>
-										<%= f.select(:half_bath_eq, [['Not Sure', ''],['1', 1], ['2', 2],['3+', 3]]) %></p>
+
 									    <p><%= f.label :media2_eq, "Media Room" %>
     									<%= f.select(:media2_eq, [['No', ''],['Yes', 'Yes']]) %>
 									    <p><%= f.label :study2_eq, "Study" %>
     									<%= f.select(:study2_eq, [['No', ''],['Yes', 'Yes']]) %></p>
     									<p><%= f.label :casita2_eq, "Casita" %>
     									<%= f.select(:casita2_eq, [['No', ''],['Yes', 'Yes']]) %></p> 
+                                        <p><%= f.label :view_eq, "View" %></p>
+                                        <p><%= f.select(:view_eq, [['Front View', 'Front View'], ['Rear View', 'Rear View'],['Right View', 'Right View'],['Left View', 'Left View']],{ :prompt => "Not Sure"}) %></p><br />
     									<p><%= f.label :name_cont, "Search for Plan" %></p>
 										<p><%= f.text_field :name_cont %></p>  									
 								</div>
