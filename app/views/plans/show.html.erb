@@ -99,6 +99,7 @@ $('#image4').click(function(e){
 <div id="picture">
 <center><%= link_to image_tag(@plan.drawing_1.url(:full)), @plan.drawing_1.url(:full) %></center>
 </div>
+<center>
 <br /><br />
 
 		<% unless @plan.name.blank? %>
@@ -149,9 +150,10 @@ $('#image4').click(function(e){
 		<% unless @plan.depth.blank? %>
 
 		  <b>Depth:</b>
-		  <%= @plan.depth %> |
+		  <%= @plan.depth %> 
 
 		<% end %>
+	</center>
 		
 		</p><br />
 <div id="purchase" class="col-md-6">
@@ -160,11 +162,14 @@ $('#image4').click(function(e){
 <% else %>
 <center><h3>Price: $<%= (@plan.price * @plan.sqfoot).to_i %></h3><p> <%= link_to "Purchase Now!", new_plan_order_path(@plan), class: "btn btn-primary"   %></center></p><br />
 </div>
+
 <div class="col-md-12 col-md-offset-3">
-<h4><i class="purchase-icon fa fa-star"></i> <%= link_to "What Does My Purchase Include?", "/purchase_info" %></h4>
-<h4><i class="purchase-icon fa fa-star"></i> <%= link_to "Frequently Asked Questions", "/questions" %></h4>
-<h4><i class="purchase-icon fa fa-star"></i> <%= link_to "What If I Want To Make Custom Modificatons To The Plan?", "/custom_mods" %></h4><br />
-<% end %>
+	<ul>
+		<h4><i class="purchase-icon fa fa-star"></i> <%= link_to "What Does My Purchase Include?", "/purchase_info" %></h4>
+		<h4><i class="purchase-icon fa fa-star"></i> <%= link_to "Frequently Asked Questions", "/questions" %></h4>
+		<h4><i class="purchase-icon fa fa-star"></i> <%= link_to "What If I Want To Make Custom Modificatons To The Plan?", "/custom_mods" %></h4><br />
+		<% end %>
+	</ul>
 </div>
 <div class="col-md-12 text-center">
 			<back>
@@ -181,48 +186,57 @@ $('#image4').click(function(e){
 		<p><%= link_to image_tag(@plan.drawing_1.url(:full)), @plan.drawing_1.url(:full) %></p>
 	</div>
 </div>
+<% unless @plan.drawing_2.blank? %>
 <div id="pics">
 			<div id="second">
 			<%= link_to image_tag(@plan.drawing_2.url(:full)), @plan.drawing_2.url(:full) %>
 		</div>
 </div>
+<% end %>
 <div id="pics">
 			<div id="elevation">
 			<%= link_to image_tag(@plan.elevation.url(:full)), @plan.elevation.url(:full) %>
 		</div>
 </div>
-
+<% unless @plan.image6.blank? %>
 	<div id="pics">
 			<div id="image">
-					<%= link_to image_tag(@plan.image2.url), @plan.image2.url %>
+					<%= link_to image_tag(@plan.image6.url), @plan.image6.url %>
 			</div>
 	</div>
-
+<% end %>
+<% unless @plan.image2.blank? %>
 		<div id="pics">
 			<div id="image2">
 					<%#<% unless image.image.blank? %>
 					<%= link_to image_tag(@plan.image2.url), @plan.image2.url %>
 			</div>
 	</div>
+<% end %>
+<% unless @plan.image3.blank? %>
 		<div id="pics">
 			<div id="image3">
 					<%#<% unless image.image.blank? %>
 					<%= link_to image_tag(@plan.image3.url), @plan.image3.url %>
 			</div>
 	</div>
+<% end %>
+<% unless @plan.image4.blank? %>
 		<div id="pics">
 			<div id="image4">
 					<%#<% unless image.image.blank? %>
 					<%= link_to image_tag(@plan.image4.url), @plan.image4.url %>
 			</div>
 	</div>
+<% end %>
+<% unless @plan.image5.blank? %>
 		<div id="pics">
 			<div id="image5">
 					<%#<% unless image.image.blank? %>
 					<%= link_to image_tag(@plan.image5.url), @plan.image5.url %>
 			</div>
 	</div>
-
+<% end %>
 
 
 </div>
