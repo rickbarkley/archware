@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: orders
+#
+#  id         :integer          not null, primary key
+#  user_id    :integer
+#  plan_id    :string(255)
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class Order < ActiveRecord::Base
   attr_accessible :plan_id, :user_id, :stripe_card_token, :plan_cost
   attr_accessor :stripe_card_token, :plan_cost

@@ -21,6 +21,9 @@ gem 'contact_us'
 gem 'formtastic'
 gem 'active_attr'
 gem "figaro"
+gem 'carrierwave'
+gem "jquery-fileupload-rails"
+gem 'fog'
 
 
 # Gems used only for assets and not required

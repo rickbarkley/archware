@@ -1,5 +1,9 @@
 
-
+<script>function add_fields(link, association, content) {
+  var new_id = new Date().getTime();
+  var regexp = new RegExp("new_" + association, "g")
+  $(link).parent().before(content.replace(regexp, new_id));
+}</script>
 <%= form_for @plan, :html => { :multipart => true } do |f| %>
   <% if @plan.errors.any? %>
     <div id="error_explanation">
@@ -91,7 +95,7 @@
   </div>
   <div class="field">
     <%= f.label :style %><br />
-    <%= f.select(:style, [['Hill country', 'Hill country'],[' Hill Country Contemporary', 'Hill Country Contemporary'],['Modern', 'Modern'],['Mediterranean', 'Mediterranean'],['Contemporary', 'Contemporary'],['traditional', 'traditional']],{ :prompt => "Not Sure"}) %>
+    <%= f.select(:style, [['Hill country', 'Hill country'],[' Hill Country Contemporary', 'Hill Country Contemporary'],['Modern', 'Modern'],['Mediterranean', 'Mediterranean'],['Contemporary', 'Contemporary'],['Traditional/Other', 'Traditional/Other']],{ :prompt => "Not Sure"}) %>
   </div>
         <div class="field">
     <%= f.label :casita2, "Plan has a Casita" %>
@@ -111,8 +115,38 @@
 	   <%= f.label :elevation, "Upload Elevation PDF", :class => 'control-label' %>
 <%= f.file_field :elevation %>
   </div>
+    <div class="control-group">
+     <%= f.label :image6, "Upload Image", :class => 'control-label' %>
+<%= f.file_field :image6 %>
+  </div>
+      <div class="control-group">
+     <%= f.label :image2, "Upload Image", :class => 'control-label' %>
+<%= f.file_field :image2 %>
+  </div>
+      <div class="control-group">
+     <%= f.label :image3, "Upload Image", :class => 'control-label' %>
+<%= f.file_field :image3 %>
+  </div>
+      <div class="control-group">
+     <%= f.label :image4, "Upload Image", :class => 'control-label' %>
+<%= f.file_field :image4 %>
+  </div>
+        <div class="control-group">
+     <%= f.label :image5, "Upload Image", :class => 'control-label' %>
+<%= f.file_field :image5 %>
+  </div>
+<!--  
+<div id="images">
+  <%= f.fields_for :images do |builder| %>
+  <%= render "image_fields", :f => builder %>
+  <% end %>
+  <p><%= link_to_add_fields "Add Another Image", f, :images %></p>
+
+    </div>
+-->
   <div class="actions">
     <%= f.submit class: "btn btn-large btn-primary" %>
   </div>
-</div>
+
+
 <% end %>

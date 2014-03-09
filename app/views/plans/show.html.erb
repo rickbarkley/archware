@@ -35,6 +35,57 @@ $('#second').click(function(e){
 
 
 });
+$('#image').click(function(e){
+	e.preventDefault();
+		$('#picture').html($('#image2').html());
+		$('#picture').show('slide', {
+			direction: "left"
+
+		}, 2000);
+
+
+});
+
+$('#image2').click(function(e){
+	e.preventDefault();
+		$('#picture').html($('#image2').html());
+		$('#picture').show('slide', {
+			direction: "left"
+
+		}, 2000);
+
+
+});
+$('#image5').click(function(e){
+	e.preventDefault();
+		$('#picture').html($('#image5').html());
+		$('#picture').show('slide', {
+			direction: "left"
+
+		}, 2000);
+
+
+});
+$('#image3').click(function(e){
+	e.preventDefault();
+		$('#picture').html($('#image3').html());
+		$('#picture').show('slide', {
+			direction: "left"
+
+		}, 2000);
+
+
+});
+$('#image4').click(function(e){
+	e.preventDefault();
+		$('#picture').html($('#image4').html());
+		$('#picture').show('slide', {
+			direction: "left"
+
+		}, 2000);
+
+
+});
 	});
 
 
@@ -44,180 +95,150 @@ $('#second').click(function(e){
 <div class="container">
 <div class="row">
 
-<div id="plan" class="col-md-9">
+<div id="plan" class="col-md-10">
 <div id="picture">
 <center><%= link_to image_tag(@plan.drawing_1.url(:full)), @plan.drawing_1.url(:full) %></center>
 </div>
 <br /><br />
-<% if @plan.price.blank? %>
-<center><h3>Price: $<%= (0.75 * @plan.sqfoot).to_i %> | <%= link_to "Purchase Now!", new_plan_order_path(@plan) %></h3></center>
-<% else %>
-<center><h3>Price: $<%= (@plan.price * @plan.sqfoot).to_i %> | <%= link_to "Purchase Now!", new_plan_order_path(@plan) %></h3></center><br /><br />
-<h4><i class="purchase-icon fa fa-star"></i> <%= link_to "What Does My Purchase Include?", "/purchase_info" %></h4>
-<h4><i class="purchase-icon fa fa-star"></i> <%= link_to "Frequently Asked Questions", "/questions" %></h4>
-<h4><i class="purchase-icon fa fa-star"></i> <%= link_to "What If I Want To Make Custom Modificatons To The Plan?", "/custom_mods" %></h4><br />
-<% end %>
 
-	</div>
-	
-
-<div class="well col-md-2">
-	<center><%= link_to "Purchase Now!", new_plan_order_path(@plan), class: "btn btn-primary"   %></center><br /><br />
 		<% unless @plan.name.blank? %>
 		<p>
 		  <b>Name:</b>
-		  <%= @plan.name %>
-		</p>
+		  <%= @plan.name %> |
+
 		<% end %>
-		<p>
+
 		  <b>Sqfoot:</b>
-		  <%= @plan.sqfoot %>
-		</p>
-		<p>
+		  <%= @plan.sqfoot %> |
+
 		  <b>Bedrooms:</b>
-		  <%= @plan.bedrooms %>
-		</p>
-		<p>
+		  <%= @plan.bedrooms %> |
+
 		  <b>Bathrooms:</b>
-		  <%= @plan.bathrooms %>
-		</p>
+		  <%= @plan.bathrooms %> |
+
 			<% unless @plan.half_bath.blank? %>
-		<p>
+
 		  <b>Half bath:</b>
-		  <%= @plan.half_bath %>
-		</p>
+		  <%= @plan.half_bath %> 
+
 			<% end %>
 
 		<p>
 		  <b>Living:</b>
-		  <%= @plan.living %>
-		</p>
-		<p>
+		  <%= @plan.living %> |
+
 		  <b>Dining:</b>
-		  <%= @plan.dining %>
-		</p>
-		<p>
+		  <%= @plan.dining %> |
+
 		  <b>Levels:</b>
 		  <%= @plan.stories %>
-		</p>
+
 		<% unless @plan.view.blank? %>
-		<p>
+
 		  <b>View:</b>
-		  <%= @plan.view %>
-		</p>
+		  <%= @plan.view %> |
+
 		<% end %>
 		<% unless @plan.width.blank? %>
-		<p>
+
 		  <b>Width:</b>
-		  <%= @plan.width %>
-		</p>
+		  <%= @plan.width %> |
+
 		<% end %>
 		<% unless @plan.depth.blank? %>
-		<p>
+
 		  <b>Depth:</b>
-		  <%= @plan.depth %>
-		</p>
+		  <%= @plan.depth %> |
+
 		<% end %>
-		<% if @plan.price.blank? %>
-		<p>
-		<b>Price:</b>
-		$ <%= (0.75 * @plan.sqfoot).to_i %>
-		</p>
-		<% else %>
-		<p>
-		  <b>Price:</b>
-		 $ <%= (@plan.price * @plan.sqfoot).to_i %>
-		</p>
-		<% end %>
+		
+		</p><br />
+<div id="purchase" class="col-md-6">
+<% if @plan.price.blank? %>
+<center><h3>Price: $<%= (0.75 * @plan.sqfoot).to_i %> <%= link_to "Purchase Now!", new_plan_order_path(@plan), class: "btn btn-primary" %></center></h3>
+<% else %>
+<center><h3>Price: $<%= (@plan.price * @plan.sqfoot).to_i %></h3><p> <%= link_to "Purchase Now!", new_plan_order_path(@plan), class: "btn btn-primary"   %></center></p><br />
+</div>
+<div class="col-md-12 col-md-offset-3">
+<h4><i class="purchase-icon fa fa-star"></i> <%= link_to "What Does My Purchase Include?", "/purchase_info" %></h4>
+<h4><i class="purchase-icon fa fa-star"></i> <%= link_to "Frequently Asked Questions", "/questions" %></h4>
+<h4><i class="purchase-icon fa fa-star"></i> <%= link_to "What If I Want To Make Custom Modificatons To The Plan?", "/custom_mods" %></h4><br />
+<% end %>
+</div>
+<div class="col-md-12 text-center">
+			<back>
+	<p><INPUT Type="button" class="btn btn-primary btn-large" VALUE="Back To Search" onClick="history.go(-1);return true;"></p>
+	</back>
+</div>
+</div>
+	
+
+<div class="well col-md-2">
+
+<div id="pics">
 		<div id="first">
 		<p><%= link_to image_tag(@plan.drawing_1.url(:full)), @plan.drawing_1.url(:full) %></p>
 	</div>
-		<% unless @plan.drawing_2.blank? %>				
-		<p>
-			<b>Secondary View:</b>
+</div>
+<div id="pics">
 			<div id="second">
 			<%= link_to image_tag(@plan.drawing_2.url(:full)), @plan.drawing_2.url(:full) %>
 		</div>
-		</p>
-
-		<% end %>
-
-		<p>
-			<b>Elevation View:</b>
+</div>
+<div id="pics">
 			<div id="elevation">
 			<%= link_to image_tag(@plan.elevation.url(:full)), @plan.elevation.url(:full) %>
+		</div>
+</div>
+
+	<div id="pics">
+			<div id="image">
+					<%= link_to image_tag(@plan.image2.url), @plan.image2.url %>
 			</div>
-		</p>
+	</div>
+
+		<div id="pics">
+			<div id="image2">
+					<%#<% unless image.image.blank? %>
+					<%= link_to image_tag(@plan.image2.url), @plan.image2.url %>
+			</div>
+	</div>
+		<div id="pics">
+			<div id="image3">
+					<%#<% unless image.image.blank? %>
+					<%= link_to image_tag(@plan.image3.url), @plan.image3.url %>
+			</div>
+	</div>
+		<div id="pics">
+			<div id="image4">
+					<%#<% unless image.image.blank? %>
+					<%= link_to image_tag(@plan.image4.url), @plan.image4.url %>
+			</div>
+	</div>
+		<div id="pics">
+			<div id="image5">
+					<%#<% unless image.image.blank? %>
+					<%= link_to image_tag(@plan.image5.url), @plan.image5.url %>
+			</div>
+	</div>
+
+
 
 </div>
 
    
-  </div>
 
-<script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
-<script>
-jQuery(document).ready(function($) {
-	
-	$('.lightbox_trigger').click(function(e) {
-		
-		//prevent default action (hyperlink)
-		e.preventDefault();
-		
-		//Get clicked link href
-		var image_href = $(this).attr("href");
-		
-		/* 	
-		If the lightbox window HTML already exists in document, 
-		change the img src to to match the href of whatever link was clicked
-		
-		If the lightbox window HTML doesn't exists, create it and insert it.
-		(This will only happen the first time around)
-		*/
-	//adding if statement causes isses with link if hit a second time!!	
-	/*if ($('.lightbox').length > 0) { // #lightbox exists
-			
-			//place href as img src value
-			$('.content').html('<img src="' + image_href + '" />');
-		   	
-			//show lightbox window - you could use .show('fast') for a transition
-			$('.lightbox').show();
-		}
-		
-		else { //#lightbox does not exist - create and insert (runs 1st time only)
-			
-			//create HTML markup for lightbox window*/
-			var lightbox = 
-			'<div class="lightbox">' +
-				'<p>Click to close</p>' +
-				'<div class="content">' + //insert clicked link's href into img src
-					'<img src="' + image_href +'" />' +
-				'</div>' +	
-			'</div>';
-				
-			//insert lightbox HTML into page
-			$('body').append(lightbox);
-		//}
-		
-	});
-	
-	//Click anywhere on the page to get rid of lightbox window
-	$('.lightbox').live('click', function() { //must use live, as the lightbox element is inserted into the DOM
-		$('.lightbox').hide();
-	});
-
-});
-</script>
 
 
 
 <div class="buttons span12">
-	<back>
-	<p><INPUT Type="button" VALUE="Back To Search" onClick="history.go(-1);return true;"></p>
-	</back>
+
 	<% if user_signed_in? %>
 		<% if current_user.has_role? :admin %>
 		<%= link_to 'Edit', edit_plan_path(@plan), class: "btn btn-large btn-primary" %> 
 		<%= link_to 'New Plan', new_plan_path, class: "btn btn-large btn-primary" %> <br />
+
 		<% end %>
 	<% end %>
 

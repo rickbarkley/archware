@@ -18,6 +18,7 @@ class PlansController < ApplicationController
   # GET /plans/1.json
   def show
     @plan = Plan.find(params[:id])
+    #@image = Image.new
 
     respond_to do |format|
       format.html # show.html.erb
@@ -30,6 +31,8 @@ class PlansController < ApplicationController
   def new
     authorize! :new, @user, :message => 'Not authorized as an administrator.'
     @plan = Plan.new
+    #2.times { @plan.images.build }
+
 
 
     respond_to do |format|
@@ -42,6 +45,7 @@ class PlansController < ApplicationController
   def edit
     authorize! :edit, @user, :message => 'Not authorized as an administrator.'
     @plan = Plan.find(params[:id])
+
   end
 
   # POST /plans

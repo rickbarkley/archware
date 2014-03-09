@@ -85,3 +85,16 @@ color: #000;
     display:none;
 }
 
+#pics img{
+text-align: cnter;
+    display: inline-block;
+    margin:8px;
+    -webkit-border-radius: 6px 6px 6px 6px;
+     -moz-border-radius: 6px 6px 6px 6px;
+     border-radius: 6px 6px 6px 6px;
+     box-shadow: 5px 5px 5px #888 !important;
+}
+#purchase {
+    max-width:200px;
+    display:inline-block;
+}

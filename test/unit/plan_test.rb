@@ -32,6 +32,24 @@
 #  garage                 :integer
 #  width                  :string(255)
 #  depth                  :string(255)
+#  plan_cost              :decimal(, )
+#  study                  :string(255)
+#  garage_loc             :string(255)
+#  media                  :boolean
+#  casita                 :boolean
+#  quart                  :boolean
+#  style                  :string(255)
+#  study2                 :string(255)
+#  casita2                :string(255)
+#  media2                 :string(255)
+#  image_file_name        :string(255)
+#  image_content_type     :string(255)
+#  image_file_size        :integer
+#  image_updated_at       :datetime
+#  image2                 :string(255)
+#  image3                 :string(255)
+#  image4                 :string(255)
+#  image5                 :string(255)
 #
 
 require 'test_helper'
