@@ -1,0 +1,7 @@
+<% new_or_existing = image.new_record? ? 'new' : 'existing' %> 
+<% prefix = "plan[#{new_or_existing}_image_attributes][]" %> 
+<% fields_for prefix, image do |image_form| -%>
+
+Image: <%= image_form.file_field :image %> 
+
+<% end %>
