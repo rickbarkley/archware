@@ -65,7 +65,9 @@ class Plan < ActiveRecord::Base
 
   has_many :orders, :dependent => :destroy
   has_many :users, through: :orders 
-  has_many :images, :dependent => :destroy  
+  has_many :images, :dependent => :destroy 
+  has_many :shopping_carts
+  has_many :shopping_cart_items 
 
   accepts_nested_attributes_for :images, :allow_destroy => true   
 

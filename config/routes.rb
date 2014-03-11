@@ -10,6 +10,9 @@ EDesign::Application.routes.draw do
      resources :orders
    end
 
+  resource :shopping_cart do
+    get 'destoy_cart'
+  end
 
   resources :pages
   resources :messages
@@ -26,6 +29,7 @@ EDesign::Application.routes.draw do
   match '/custom_mods', :to => 'pages#custom_mods'
   match '/questions', :to => 'pages#questions'
   match '/contact', :to => 'contact_us/contacts#new'
+  match '/cart', :to => 'plans#add_to_cart'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140309193525) do
+ActiveRecord::Schema.define(:version => 20140310171732) do
 
   create_table "images", :force => true do |t|
     t.string   "name"
@@ -101,6 +101,22 @@ ActiveRecord::Schema.define(:version => 20140309193525) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], :name => "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], :name => "index_roles_on_name"
+
+  create_table "shopping_cart_items", :force => true do |t|
+    t.integer  "owner_id"
+    t.string   "owner_type"
+    t.integer  "quantity"
+    t.integer  "item_id"
+    t.string   "item_type"
+    t.float    "price"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "shopping_carts", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

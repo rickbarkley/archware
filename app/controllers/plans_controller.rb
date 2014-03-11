@@ -94,4 +94,18 @@ class PlansController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def add_to_cart
+  @cart = get_cart
+  @cart.add_to_cart(Plan.find(params[:id]))
+end
+
+def get_cart
+  if session[:cart]
+    return session[:cart]
+  else
+    session[:cart] = Cart.new
+    return session[:cart]
+  end
+end
 end

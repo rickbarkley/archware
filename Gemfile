@@ -24,6 +24,7 @@ gem "figaro"
 gem 'carrierwave'
 gem "jquery-fileupload-rails"
 gem 'fog'
+gem 'acts_as_shopping_cart', :github => 'crowdint/acts_as_shopping_cart', :branch => '0-1-x'
 
 
 # Gems used only for assets and not required

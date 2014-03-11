@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/crowdint/acts_as_shopping_cart.git
+  revision: ce656b5f0247836094acb6a857252b2c1507d061
+  branch: 0-1-x
+  specs:
+    acts_as_shopping_cart (0.1.6)
+      activerecord (> 3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -187,6 +195,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_attr
+  acts_as_shopping_cart!
   aws-sdk
   cancan
   carrierwave
