@@ -31,4 +31,6 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
   has_many :plans, through: :orders
   has_many :orders, :dependent => :destroy
+  has_many :plans, through: :saved_plans
+  has_many :saved_plans, :dependent => :destroy
 end

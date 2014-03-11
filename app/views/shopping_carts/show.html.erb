@@ -1,0 +1,20 @@
+
+<div class="container">
+<div class="row">
+<h1>Shopping Cart</h1>
+
+<%= render :partial => 'shopping_cart_item', :collection => @shopping_cart.shopping_cart_items %>
+
+<div>
+  <div><b>SubTotal:</b><%= number_to_currency @shopping_cart.subtotal %></div>
+  <div><b>Taxes:</b><%= number_to_currency @shopping_cart.taxes %></div>
+  <div><b>Total:</b><%= number_to_currency @shopping_cart.total %></div><br /><br />
+  <%= link_to "Continue Shopping", plans_path, class: "btn btn-primary" %>
+  <%= link_to "Purchase Plans", "#", class: "btn btn-primary" %>
+
+
+  <br /><br /><br />
+
+</div>
+</div>
+</div>

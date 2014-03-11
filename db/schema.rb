@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140310171732) do
+ActiveRecord::Schema.define(:version => 20140311164353) do
 
   create_table "images", :force => true do |t|
     t.string   "name"
@@ -38,6 +38,13 @@ ActiveRecord::Schema.define(:version => 20140310171732) do
     t.string   "plan_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "name"
+    t.string   "address_1"
+    t.string   "address_2"
+    t.string   "city"
+    t.string   "zip"
+    t.string   "phone"
+    t.string   "email"
   end
 
   create_table "plans", :force => true do |t|
@@ -102,6 +109,15 @@ ActiveRecord::Schema.define(:version => 20140310171732) do
   add_index "roles", ["name", "resource_type", "resource_id"], :name => "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], :name => "index_roles_on_name"
 
+  create_table "saved_plans", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "plan_id"
+    t.string   "email"
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "shopping_cart_items", :force => true do |t|
     t.integer  "owner_id"
     t.string   "owner_type"
@@ -131,6 +147,7 @@ ActiveRecord::Schema.define(:version => 20140310171732) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.string   "name"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

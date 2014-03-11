@@ -68,12 +68,21 @@ class Plan < ActiveRecord::Base
   has_many :images, :dependent => :destroy 
   has_many :shopping_carts
   has_many :shopping_cart_items 
+  has_many :users, through: :saved_plans
+  has_many :saved_plans, :dependent => :destroy
+  accepts_nested_attributes_for :saved_plans
 
   accepts_nested_attributes_for :images, :allow_destroy => true   
 
   mount_uploader :image2, ImageUploader   
   mount_uploader :image3, ImageUploader  
   mount_uploader :image4, ImageUploader  
-  mount_uploader :image5, ImageUploader          
+  mount_uploader :image5, ImageUploader 
+
+  def accessible_to_user_by_saved?(user)
+        #Look for course enrollments that belong to given user and have not expired
+       saved_plans = self.saved_plans.where("user_id = ?", user.id)
+       !saved_plans.blank? # Returns true if there is at least one registration found, otherwise returns false
+    end         
 
 end

@@ -1,0 +1,27 @@
+
+	<% if user_signed_in? %>
+<% if @plan.accessible_to_user_by_saved?(current_user) %>
+Plan Already Saved
+<% else %>
+	<div class="col-md-12 text-center">
+
+			<%= form_for(@saved_plan) do |f| %>
+
+
+			<%= f.hidden_field :plan_id %>
+			<%= f.hidden_field :user_id, :value => current_user.id %>
+			<%= f.hidden_field :email, :value => current_user.email %>
+			  
+
+			  <div class="form-actions">
+		<h4>Would you like to save this Plan? <%= f.submit "Yes", class: "btn btn-primary btn-large" %>  <%= link_to "Back to Search", plans_path, class: "btn btn-primary btn-large" %></h4>
+			  </div>
+			<% end %>
+		</div>
+		<% end %>
+		<% end %>
+
+<%= image_tag(@plan.drawing_1.url) %><br /><br />
+<%= image_tag(@plan.drawing_2.url) %><br /><br />
+<%= image_tag(@plan.elevation.url) %><br /><br />
+

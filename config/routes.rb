@@ -3,13 +3,16 @@ EDesign::Application.routes.draw do
 
   get "message/create"
 
+  resources :saved_plans
+
      resources :orders
   devise_for :users
 
   resources :plans do
      resources :orders
+     resources :saved_plans
    end
-
+  resources :users
   resource :shopping_cart do
     get 'destoy_cart'
   end

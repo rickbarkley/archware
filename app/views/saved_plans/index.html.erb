@@ -1,0 +1,28 @@
+
+<div class="container">
+  <div class="row">
+<h1>Saved Plans</h1>
+
+<table>
+  <tr>
+
+    <th>Plan</th>
+    <th>User</th>
+
+
+  </tr>
+
+<% @saved_plan.each do |saved_plan| %>
+  <tr>
+
+    <td><%= saved_plan.plan_id %></td>
+    <td><%= saved_plan.email %></td>
+
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+</div>
+</div>

@@ -97,7 +97,7 @@ $('#image4').click(function(e){
 
 <div id="plan" class="col-md-10">
 <div id="picture">
-<center><%= link_to image_tag(@plan.drawing_1.url(:full)), @plan.drawing_1.url(:full) %></center>
+<center><%= link_to image_tag(@plan.drawing_1.url(:full)), new_plan_saved_plan_path(@plan)%></center>
 </div>
 <center>
 <br /><br />
@@ -153,17 +153,17 @@ $('#image4').click(function(e){
 		  <%= @plan.depth %> 
 
 		<% end %>
-		<%= link_to "Add to cart", shopping_cart_path(:plan_id => @plan), :method => 'POST', class: "btn btn-primary" %>
+
 	</center>
 		
 		</p><br />
 <div id="purchase" class="col-md-6">
 <% if @plan.price.blank? %>
-<center><h3>Price: $<%= (0.75 * @plan.sqfoot).to_i %> <%= link_to "Purchase Now!", new_plan_order_path(@plan), class: "btn btn-primary" %></center></h3>
+<center><p><b>Price: $<%= (0.75 * @plan.sqfoot).to_i %></b> <%= link_to "Purchase new_plan_saved_plan_path!", new_plan_order_path(@plan), class: "btn btn-primary btn-lg" %></center></p>
 <% else %>
-<center><h3>Price: $<%= (@plan.price * @plan.sqfoot).to_i %></h3><p> <%= link_to "Purchase Now!", new_plan_order_path(@plan), class: "btn btn-primary"   %></center></p><br />
+<center><p><b>Price: $<%= (@plan.price * @plan.sqfoot).to_i %></b></p><p> <%= link_to "Purchase Plan!", new_plan_order_path(@plan), class: "btn btn-primary btn-lg"   %></center></p><br />
 <% end %>
-<%= link_to "Add to cart", shopping_cart_path(:plan_id => @plan), :method => 'POST', class: "btn btn-primary" %>
+
 </div>
 
 <div class="col-md-12 col-md-offset-3">
@@ -183,28 +183,36 @@ $('#image4').click(function(e){
 	
 
 <div class="well col-md-2">
+	<center><%= link_to "Purchase Plan!", new_plan_order_path(@plan), class: "btn btn-primary" %></center>
+<% if user_signed_in? %>
+<% if @plan.accessible_to_user_by_saved?(current_user) %>
+<center><%= link_to "More Info", new_plan_saved_plan_path(@plan), class: "btn btn-primary" %></center>
+<% else %>
+<center><%= link_to "More Info/Save Plan", new_plan_saved_plan_path(@plan), class: "btn btn-primary" %></center>
+<% end %>
+<% end %>
 
 <div id="pics">
 		<div id="first">
-		<p><%= link_to image_tag(@plan.drawing_1.url(:full)), @plan.drawing_1.url(:full) %></p>
+		<p><%= link_to image_tag(@plan.drawing_1.url(:full)), new_plan_saved_plan_path(@plan) %></p>
 	</div>
 </div>
 <% unless @plan.drawing_2.blank? %>
 <div id="pics">
 			<div id="second">
-			<%= link_to image_tag(@plan.drawing_2.url(:full)), @plan.drawing_2.url(:full) %>
+			<%= link_to image_tag(@plan.drawing_2.url(:full)), new_plan_saved_plan_path(@plan) %>
 		</div>
 </div>
 <% end %>
 <div id="pics">
 			<div id="elevation">
-			<%= link_to image_tag(@plan.elevation.url(:full)), @plan.elevation.url(:full) %>
+			<%= link_to image_tag(@plan.elevation.url(:full)), new_plan_saved_plan_path(@plan)%>
 		</div>
 </div>
 <% unless @plan.image6.blank? %>
 	<div id="pics">
 			<div id="image">
-					<%= link_to image_tag(@plan.image6.url), @plan.image6.url %>
+					<%= link_to image_tag(@plan.image6.url), new_plan_saved_plan_path(@plan) %>
 			</div>
 	</div>
 <% end %>
@@ -212,7 +220,7 @@ $('#image4').click(function(e){
 		<div id="pics">
 			<div id="image2">
 					<%#<% unless image.image.blank? %>
-					<%= link_to image_tag(@plan.image2.url), @plan.image2.url %>
+					<%= link_to image_tag(@plan.image2.url), new_plan_saved_plan_path(@plan) %>
 			</div>
 	</div>
 <% end %>
@@ -220,7 +228,7 @@ $('#image4').click(function(e){
 		<div id="pics">
 			<div id="image3">
 					<%#<% unless image.image.blank? %>
-					<%= link_to image_tag(@plan.image3.url), @plan.image3.url %>
+					<%= link_to image_tag(@plan.image3.url), new_plan_saved_plan_path(@plan) %>
 			</div>
 	</div>
 <% end %>
@@ -228,7 +236,7 @@ $('#image4').click(function(e){
 		<div id="pics">
 			<div id="image4">
 					<%#<% unless image.image.blank? %>
-					<%= link_to image_tag(@plan.image4.url), @plan.image4.url %>
+					<%= link_to image_tag(@plan.image4.url), new_plan_saved_plan_path(@plan) %>
 			</div>
 	</div>
 <% end %>
@@ -236,7 +244,7 @@ $('#image4').click(function(e){
 		<div id="pics">
 			<div id="image5">
 					<%#<% unless image.image.blank? %>
-					<%= link_to image_tag(@plan.image5.url), @plan.image5.url %>
+					<%= link_to image_tag(@plan.image5.url), new_plan_saved_plan_path(@plan) %>
 			</div>
 	</div>
 <% end %>

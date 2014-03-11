@@ -14,19 +14,36 @@
       </ul>
     </div>
   <% end %>
+  <h2>Shipping Info</h2>
+ <p> <%=label_tag :name %></p>
+  <p><%= text_field_tag :name %></p>
+  <p><%= label_tag :address_1 %></p>
+    <p><%= text_field_tag :address_1 %></p>
+    <p><%= label_tag :address_2 %></p>
+     <p> <%= text_field_tag :address_2 %></p>
+      <p><%= label_tag :city %></p>
+      <p>  <%= text_field_tag :city %></p>
+        <p><%= label_tag :zip %></p>
+       <p>   <%= text_field_tag :zip %></p>
+<h2>Contact Info</h2>
+ <p> <%=label_tag :email %></p>
+  <p><%= text_field_tag :email %></p>
+  <p><%= label_tag :phone, "Day time Phone number" %></p>
+   <P> <%= text_field_tag :phone %></p>
 
+<h2>Payment Info</h2>
   <div class="field">
-    <%= label_tag :card_number, "Credit Card Number" %>
-    <%= text_field_tag :card_number, nil, name: nil %>
+   <P> <%= label_tag :card_number, "Credit Card Number" %></p>
+  <p>  <%= text_field_tag :card_number, nil, name: nil %></p>
   </div>
   <div class="field">
-    <%= label_tag :card_code, "Security Code on Card (CVV)" %>
-    <%= text_field_tag :card_code, nil, name: nil %>
+    <P><%= label_tag :card_code, "Security Code on Card (CVV)" %></p>
+   <p> <%= text_field_tag :card_code, nil, name: nil %></p>
   </div>
   <div class="field">
-    <%= label_tag :card_month, "Card Expiration" %>
-    <%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month"} %>
-    <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year"} %>
+  <p>  <%= label_tag :card_month, "Card Expiration" %></p>
+   <p> <%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month"} %>
+    <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year"} %></p>
   </div>
 
 <div id="stripe_error">
