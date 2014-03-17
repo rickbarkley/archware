@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+<h3>Users</h3>
+<%= will_paginate %>
+<div class="span8">
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Email</th>
+      <th>user.id</th>
+      <th>Registered</th>
+	  <th>Last Login</th>
+      <th>Role</th>
+      
+    </tr>
+  </thead>
+<!-- When submit the form, the view rendered will be the index view of our courses resource -->
+<%= form_tag(users_path, :method => "get", class: "navbar-form", id: "search-form") do %>
+ <center> <div class="input-append">
+<%= text_field_tag :search, params[:search], class: "span4", placeholder: "Search for User" %></center>
+    <!-- In order to have the "search" icon int the button, we need to use plain HTML instead 
+         of using a Rails form helper -->
+<% end %>
+    </div>
+  <tbody>
+  <% @users.each do |user| %>
+    <tr>
+	
+      <td><%= link_to user.name, user %></td>
+      <td><%= user.email %></td>
+      <td><%= user.id %></td>   
+      <td><%= user.created_at.to_date %></td>
+	  <td><%= user.last_sign_in_at%>
+      <td><%= user.roles.first.name.titleize unless user.roles.first.nil? %></td>
+      <td>
+        <a data-toggle="modal" href="#role-options-<%= user.id %>" class="btn btn-mini" type="button">Change role</a>
+        <%= render user %>
+      </td>
+      <td><%= link_to("Delete user", user_path(user), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'btn btn-primary') unless user == current_user %></td>
+<td><%= link_to "Edit User", edit_registration_path(user), class: "btn btn-primary" %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<%= will_paginate %>
+</div>
+</div>
+</div>
