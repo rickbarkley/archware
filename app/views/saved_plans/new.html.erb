@@ -2,7 +2,8 @@
 	<% if user_signed_in? %>
 <% if @plan.accessible_to_user_by_saved?(current_user) %>
 Plan Already Saved
-<% else %>
+<%end%>
+<%end%>
 	<div class="col-md-12 text-center">
 
 			<%= form_for(@saved_plan) do |f| %>
@@ -21,8 +22,7 @@ Plan Already Saved
 			  </div>
 			<% end %>
 		</div>
-		<% end %>
-		<% end %>
+	
 
 <%= image_tag(@plan.drawing_1.url(:full)) %><br /><br />
 <%= image_tag(@plan.drawing_2.url(:full)) %><br /><br />
