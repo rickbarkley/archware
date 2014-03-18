@@ -104,6 +104,12 @@ $( "#down" ).click(function() {
   $("#up").toggle("fast")
   $("#down").toggle("fast")
 	});
+$( "#down2" ).click(function() {
+  $( "#secondgroup" ).toggle( "slow") 
+  $("#thirdgroup").toggle("slow")
+  $("#up").toggle("fast")
+  $("#down").toggle("fast")
+	});
 });
 </script>
 
@@ -208,14 +214,17 @@ $( "#down" ).click(function() {
 
 <% end %>
 
-<% if @plan.image3.blank? | @plan.image4.blank? | @plan.image5.blank? %>
+<%#<% if @plan.image3.blank? | @plan.image4.blank? | @plan.image5.blank? %>
 <p></p>
-<% else %>
+<%#<% else %>
+<!--
 	<center><div id ="up"><i class="up-icon fa fa-chevron-up"></i></div></center>
 <center><div id ="down"><i class="down-icon fa fa-chevron-down"></i></div></center>
-<% end %>
+<center><div id ="down2"><i class="down-icon fa fa-chevron-down"></i></div></center>
+<%#<% end %>
+-->
 <div id="firstgroup">
-
+<center><div >up</div></center>
 <div id="pics">
 		<div id="first">
 		<%= link_to image_tag(@plan.drawing_1.url(:full)), new_plan_saved_plan_path(@plan) %>
@@ -245,8 +254,9 @@ $( "#down" ).click(function() {
 <% end %>
 <center><%= link_to "Purchase Plan!", new_plan_order_path(@plan), class: "btn btn-primary" %></center>
 </div>
+<center><div id ="down"><i class="down-icon fa fa-chevron-down"></i></div></center>
 <div id="secondgroup">
-	
+<center><div id ="up"><i class="up-icon fa fa-chevron-up"></i></div></center>	
 <% unless @plan.image3.blank? %>
 		<div id="pics">
 			<div id="image3">
@@ -276,6 +286,43 @@ $( "#down" ).click(function() {
 			<div id="image7">
 					<%#<% unless image.image.blank? %>
 					<%= link_to image_tag(@plan.image7.url), new_plan_saved_plan_path(@plan) %>
+			</div>
+	</div>
+<% end %>
+<center><%= link_to "Purchase Plan!", new_plan_order_path(@plan), class: "btn btn-primary" %></center>
+</div>
+<center><div id ="down2"><i class="down-icon fa fa-chevron-down"></i></div></center>
+<div id="thirdgroup">
+<center><div id ="up2"><i class="up-icon fa fa-chevron-up"></i></div></center>	
+<% unless @plan.image8.blank? %>
+		<div id="pics">
+			<div id="image8">
+					<%#<% unless image.image.blank? %>
+					<%= link_to image_tag(@plan.image8.url), new_plan_saved_plan_path(@plan) %>
+			</div>
+	</div>
+<% end %>
+<% unless @plan.image9.blank? %>
+		<div id="pics">
+			<div id="image9">
+					<%#<% unless image.image.blank? %>
+					<%= link_to image_tag(@plan.image9.url), new_plan_saved_plan_path(@plan) %>
+			</div>
+	</div>
+<% end %>
+<% unless @plan.image10.blank? %>
+		<div id="pics">
+			<div id="image10">
+					<%#<% unless image.image.blank? %>
+					<%= link_to image_tag(@plan.image10.url), new_plan_saved_plan_path(@plan) %>
+			</div>
+	</div>
+<% end %>
+<% unless @plan.image11.blank? %>
+		<div id="pics">
+			<div id="image11">
+					<%#<% unless image.image.blank? %>
+					<%= link_to image_tag(@plan.image11.url), new_plan_saved_plan_path(@plan) %>
 			</div>
 	</div>
 <% end %>
