@@ -254,9 +254,10 @@ $( "#up2" ).click(function() {
 			</div>
 	</div>
 <% end %>
+<center><div id ="down"><i class="down-icon fa fa-chevron-down"></i></div></center>
 <center><%= link_to "Purchase Plan!", new_plan_order_path(@plan), class: "btn btn-primary" %></center>
 </div>
-<center><div id ="down"><i class="down-icon fa fa-chevron-down"></i></div></center>
+
 <div id="secondgroup">
 <center><div id ="up"><i class="up-icon fa fa-chevron-up"></i></div></center>	
 <% unless @plan.image3.blank? %>
