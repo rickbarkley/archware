@@ -254,7 +254,11 @@ $( "#up2" ).click(function() {
 			</div>
 	</div>
 <% end %>
+<% if @plan.image3.blank? | @plan.image4.blank? | @plan.image5.blank? %>
+<center><div ><i class="down-max-icon fa fa-chevron-down"></i></div></center>
+<% else %>
 <center><div id ="down"><i class="down-icon fa fa-chevron-down"></i></div></center>
+<% end %>
 <center><%= link_to "Purchase Plan!", new_plan_order_path(@plan), class: "btn btn-primary" %></center>
 </div>
 
@@ -292,7 +296,11 @@ $( "#up2" ).click(function() {
 			</div>
 	</div>
 <% end %>
+<% if @plan.image8.blank? | @plan.image9.blank? | @plan.image10.blank? %>
+<center><div ><i class="down-max-icon fa fa-chevron-down"></i></div></center>
+<% else %>
 <center><div id ="down2"><i class="down-icon fa fa-chevron-down"></i></div></center>
+<% end %>
 <center><%= link_to "Purchase Plan!", new_plan_order_path(@plan), class: "btn btn-primary" %></center>
 </div>
 
@@ -330,7 +338,7 @@ $( "#up2" ).click(function() {
 			</div>
 	</div>
 <% end %>
-<center><div ><i class="down-max-icon fa fa-chevron-up"></i></div></center>
+<center><div ><i class="down-max-icon fa fa-chevron-down"></i></div></center>
 <center><%= link_to "Purchase Plan!", new_plan_order_path(@plan), class: "btn btn-primary" %></center>
 </div>
 </div>
