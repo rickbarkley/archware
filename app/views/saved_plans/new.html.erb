@@ -22,7 +22,7 @@ Plan Already Saved
 			  </div>
 			<% end %>
 			<%else%>
-			<center><p>You must be signed in to save a plan
+			<center><p><red>You must be signed in to save a plan </red>
     <%= link_to 'Login', new_user_session_path, class: "btn btn-primary" %> 
     <%= link_to 'Sign up', new_user_registration_path, class: "btn btn-primary" %></p>
     <%end%>
