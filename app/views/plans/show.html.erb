@@ -202,9 +202,11 @@ $( "#down" ).click(function() {
 	
 <% if user_signed_in? %>
 <%unless @plan.accessible_to_user_by_saved?(current_user) %>
-<center><%= link_to "More Info/Save Plan", new_plan_saved_plan_path(@plan), class: "btn btn-primary" %></center>
-<% else %>
-
+<center><%= link_to "More Info/Save Plan", new_plan_saved_plan_path(@plan), class: "btn btn-primary" %></center><br />
+<% end %>
+<% end %>
+<% if user_signed_in? %>
+<%unless @plan.accessible_to_user_by_saved!(current_user) %>
 <center><%= link_to "More Info", new_plan_saved_plan_path(@plan), class: "btn btn-primary" %></center><br />
 
 <% end %>
