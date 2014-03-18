@@ -1,11 +1,11 @@
 
-	<% if user_signed_in? %>
+
 <% if @plan.accessible_to_user_by_saved?(current_user) %>
 Plan Already Saved
 <%end%>
 <%end%>
 	<div class="col-md-12 text-center">
-
+	<% if user_signed_in? %>
 			<%= form_for(@saved_plan) do |f| %>
 
 
@@ -21,7 +21,12 @@ Plan Already Saved
 	<INPUT Type="button" class="btn btn-primary" VALUE="Back To Search" onClick="history.go(-2);return true;"></h4><br />
 			  </div>
 			<% end %>
-		</div>
+			<%else%>
+			<center><p>You must be signed in to save a plan
+    <%= link_to 'Login', new_user_session_path, class: "btn btn-primary" %> 
+    <%= link_to 'Sign up', new_user_registration_path, class: "btn btn-primary" %></p>
+    <%end%>
+
 	
 
 <%= image_tag(@plan.drawing_1.url(:full)) %><br /><br />
