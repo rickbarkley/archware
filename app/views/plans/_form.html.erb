@@ -104,16 +104,35 @@
 </div>
 <div id="row-four" class="col-md-3">
   <div class="control-group">
+
 	   <%= f.label :drawing_1, "Upload Primary Plan PDF", :class => 'control-label' %>
+     <% if f.object.new_record? | f.object.blank? %>
 <%= f.file_field :drawing_1 %>
+<% else %>
+ <%= f.file_field :drawing_1 %>
+      <%= link_to File.basename(f.object.drawing_1.url), f.object.drawing_1.url %>
+        Remove Image<%= f.check_box(:delete_photo) %>
+        <% end %>
   </div>
   <div class="control-group">
 	   <%= f.label :drawing_2, "Upload SecondaryPlan PDF (optional)", :class => 'control-label' %>
+     <% if f.object.new_record? | f.object.blank? %>
 <%= f.file_field :drawing_2 %>
+<% else %>
+  <%= f.file_field :drawing_2 %>
+      <%= link_to File.basename(f.object.drawing_2.url), f.object.drawing_2.url %>
+        Remove Image<%= f.check_box(:delete_photo2) %>
+        <% end %>
   </div>
   <div class="control-group">
 	   <%= f.label :elevation, "Upload Elevation PDF", :class => 'control-label' %>
+     <% if f.object.new_record? | f.object.blank? %>
 <%= f.file_field :elevation %>
+<% else %>
+  <%= f.file_field :elevation %>
+      <%= link_to File.basename(f.object.elevation.url), f.object.elevation.url %>
+        Remove Image<%= f.check_box(:delete_photoe) %>
+        <% end %>
   </div>
     <div class="control-group">
      <%#<%= f.label :image6, "Upload Image", :class => 'control-label' %>
@@ -121,19 +140,84 @@
   </div>
       <div class="control-group">
      <%= f.label :image2, "Upload Image", :class => 'control-label' %>
+     <% if f.object.new_record? | @plan.image2.blank? %>
 <%= f.file_field :image2 %>
+<% else %>
+<%= f.file_field :image2 %>
+      <%= link_to File.basename(f.object.image2.url), f.object.image2.url %>
+        <% end %>
   </div>
       <div class="control-group">
      <%= f.label :image3, "Upload Image", :class => 'control-label' %>
+     <% if f.object.new_record? | @plan.image3.blank? %>
 <%= f.file_field :image3 %>
+<% else %>
+<%= f.file_field :image3 %>
+      <%= link_to File.basename(f.object.image3.url), f.object.image3.url %>
+        <% end %>
   </div>
       <div class="control-group">
      <%= f.label :image4, "Upload Image", :class => 'control-label' %>
+     <% if f.object.new_record? | @plan.image4.blank? %>
 <%= f.file_field :image4 %>
+<% else %>
+<%= f.file_field :image4 %>
+      <%= link_to File.basename(f.object.image4.url), f.object.image4.url %>
+        <% end %>
   </div>
         <div class="control-group">
      <%= f.label :image5, "Upload Image", :class => 'control-label' %>
+     <% if f.object.new_record? | @plan.image5.blank? %>
 <%= f.file_field :image5 %>
+<% else %>
+<%= f.file_field :image5 %>
+      <%= link_to File.basename(f.object.image5.url), f.object.image5.url %>
+        <% end %>
+  </div>
+  <div class="control-group">
+     <%= f.label :image7, "Upload Image", :class => 'control-label' %>
+     <% if f.object.new_record? | @plan.image7.blank? %>
+<%= f.file_field :image7 %>
+<% else %>
+<%= f.file_field :image7 %>
+      <%= link_to File.basename(f.object.image7.url), f.object.image7.url %>
+        <% end %>
+  </div>
+  <div class="control-group">
+     <%= f.label :image8, "Upload Image", :class => 'control-label' %>
+     <% if f.object.new_record? | @plan.image8.blank? %>
+<%= f.file_field :image8 %>
+<% else %>
+<%= f.file_field :image8 %>
+      <%= link_to File.basename(f.object.image8.url), f.object.image8.url %>
+        <% end %>
+  </div>
+  <div class="control-group">
+     <%= f.label :image9, "Upload Image", :class => 'control-label' %>
+     <% if f.object.new_record? | @plan.image9.blank? %>9
+<%= f.file_field :image9 %>
+<% else %>
+<%= f.file_field :image9 %>
+      <%= link_to File.basename(f.object.image9.url), f.object.image9.url %>
+        <% end %>
+  </div>
+  <div class="control-group">
+     <%= f.label :image10, "Upload Image", :class => 'control-label' %>
+     <% if f.object.new_record? | @plan.image10.blank? %>
+<%= f.file_field :image10 %>
+<% else %>
+<%= f.file_field :image10 %>
+      <%= link_to File.basename(f.object.image10.url), f.object.image10.url %>
+        <% end %>
+
+  <div class="control-group">
+     <%= f.label :image11, "Upload Image", :class => 'control-label' %>
+     <% if f.object.new_record? | @plan.image11.blank? %>
+<%= f.file_field :image11 %>
+<% else %>
+<%= f.file_field :image11 %>
+      <%= link_to File.basename(f.object.image11.url), f.object.image11.url %>
+        <% end %>
   </div>
 <!--  
 <div id="images">

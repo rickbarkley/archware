@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140311164353) do
+ActiveRecord::Schema.define(:version => 20140317213400) do
 
   create_table "images", :force => true do |t|
     t.string   "name"
@@ -96,6 +96,11 @@ ActiveRecord::Schema.define(:version => 20140311164353) do
     t.string   "image4"
     t.string   "image5"
     t.string   "image6"
+    t.string   "image7"
+    t.string   "image8"
+    t.string   "image9"
+    t.string   "image10"
+    t.string   "image11"
   end
 
   create_table "roles", :force => true do |t|

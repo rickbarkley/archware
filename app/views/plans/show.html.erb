@@ -88,7 +88,23 @@ $('#image4').click(function(e){
 });
 	});
 
+</script>
 
+<script>
+$(document).ready(function() {
+$( "#up" ).click(function() {
+  $( "#firstgroup" ).toggle( "slow") 
+  $("#secondgroup").toggle("slow")
+  $("#down").toggle("fast")
+  $("#up").toggle("fast")
+	});
+$( "#down" ).click(function() {
+  $( "#firstgroup" ).toggle( "slow") 
+  $("#secondgroup").toggle("slow")
+  $("#up").toggle("fast")
+  $("#down").toggle("fast")
+	});
+});
 </script>
 
 <p id="notice"><%= notice %></p>
@@ -182,19 +198,23 @@ $('#image4').click(function(e){
 </div>
 	
 
-<div class="well col-md-2">
-	<center><%= link_to "Purchase Plan!", new_plan_order_path(@plan), class: "btn btn-primary" %></center>
+<div id="sidebar" class="well col-md-2">
+	
 <% if user_signed_in? %>
 <% if @plan.accessible_to_user_by_saved?(current_user) %>
-<center><%= link_to "More Info", new_plan_saved_plan_path(@plan), class: "btn btn-primary" %></center>
+<center><%= link_to "More Info", new_plan_saved_plan_path(@plan), class: "btn btn-primary" %></center><br />
 <% else %>
-<center><%= link_to "More Info/Save Plan", new_plan_saved_plan_path(@plan), class: "btn btn-primary" %></center>
+<center><%= link_to "More Info/Save Plan", new_plan_saved_plan_path(@plan), class: "btn btn-primary" %></center><br />
 <% end %>
 <% end %>
+	<center><div id ="up"><i class="up-icon fa fa-chevron-up"></i></div></center>
+<center><div id ="down"><i class="down-icon fa fa-chevron-down"></i></div></center>
+<div id="firstgroup">
 
 <div id="pics">
 		<div id="first">
-		<p><%= link_to image_tag(@plan.drawing_1.url(:full)), new_plan_saved_plan_path(@plan) %></p>
+		<%= link_to image_tag(@plan.drawing_1.url(:full)), new_plan_saved_plan_path(@plan) %>
+
 	</div>
 </div>
 <% unless @plan.drawing_2.blank? %>
@@ -209,13 +229,7 @@ $('#image4').click(function(e){
 			<%= link_to image_tag(@plan.elevation.url(:full)), new_plan_saved_plan_path(@plan)%>
 		</div>
 </div>
-<% unless @plan.image6.blank? %>
-	<div id="pics">
-			<div id="image">
-					<%= link_to image_tag(@plan.image6.url), new_plan_saved_plan_path(@plan) %>
-			</div>
-	</div>
-<% end %>
+
 <% unless @plan.image2.blank? %>
 		<div id="pics">
 			<div id="image2">
@@ -224,6 +238,10 @@ $('#image4').click(function(e){
 			</div>
 	</div>
 <% end %>
+<center><%= link_to "Purchase Plan!", new_plan_order_path(@plan), class: "btn btn-primary" %></center>
+</div>
+<div id="secondgroup">
+	
 <% unless @plan.image3.blank? %>
 		<div id="pics">
 			<div id="image3">
@@ -248,8 +266,16 @@ $('#image4').click(function(e){
 			</div>
 	</div>
 <% end %>
-
-
+<% unless @plan.image7.blank? %>
+		<div id="pics">
+			<div id="image7">
+					<%#<% unless image.image.blank? %>
+					<%= link_to image_tag(@plan.image7.url), new_plan_saved_plan_path(@plan) %>
+			</div>
+	</div>
+<% end %>
+<center><%= link_to "Purchase Plan!", new_plan_order_path(@plan), class: "btn btn-primary" %></center>
+</div>
 </div>
 
    
