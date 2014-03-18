@@ -203,9 +203,10 @@ $( "#down" ).click(function() {
 <% if user_signed_in? %>
 <% if @plan.accessible_to_user_by_saved?(current_user) %>
 <center><%= link_to "More Info", new_plan_saved_plan_path(@plan), class: "btn btn-primary" %></center><br />
+<% end %>
 <% else %>
 <center><%= link_to "More Info/Save Plan", new_plan_saved_plan_path(@plan), class: "btn btn-primary" %></center><br />
-<% end %>
+
 <% end %>
 	<center><div id ="up"><i class="up-icon fa fa-chevron-up"></i></div></center>
 <center><div id ="down"><i class="down-icon fa fa-chevron-down"></i></div></center>
