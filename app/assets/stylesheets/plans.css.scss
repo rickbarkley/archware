@@ -121,7 +121,10 @@ i.down-icon {
     font-size: 34px;
 }
 
-
+i.up-max-icon {
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+}
 
 #sidebar_show {
     border: solid #888 2px;
