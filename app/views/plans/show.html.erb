@@ -95,20 +95,22 @@ $(document).ready(function() {
 $( "#up" ).click(function() {
   $( "#firstgroup" ).toggle( "slow") 
   $("#secondgroup").toggle("slow")
-  $("#down").toggle("fast")
-  $("#up").toggle("fast")
+
 	});
 $( "#down" ).click(function() {
   $( "#firstgroup" ).toggle( "slow") 
   $("#secondgroup").toggle("slow")
-  $("#up").toggle("fast")
-  $("#down").toggle("fast")
+
 	});
 $( "#down2" ).click(function() {
   $( "#secondgroup" ).toggle( "slow") 
   $("#thirdgroup").toggle("slow")
-  $("#up").toggle("fast")
-  $("#down").toggle("fast")
+
+	});
+$( "#up2" ).click(function() {
+  $( "#secondgroup" ).toggle( "slow") 
+  $("#thirdgroup").toggle("slow")
+
 	});
 });
 </script>
@@ -326,6 +328,7 @@ $( "#down2" ).click(function() {
 			</div>
 	</div>
 <% end %>
+<p>down</p>
 <center><%= link_to "Purchase Plan!", new_plan_order_path(@plan), class: "btn btn-primary" %></center>
 </div>
 </div>
