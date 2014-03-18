@@ -201,12 +201,12 @@ $( "#down" ).click(function() {
 <div id="sidebar_show" class="well col-md-2">
 	
 <% if user_signed_in? %>
-<% if @plan.accessible_to_user_by_saved?(current_user) %>
+<%unless @plan.accessible_to_user_by_saved?(current_user) %>
+<center><%= link_to "More Info/Save Plan", new_plan_saved_plan_path(@plan), class: "btn btn-primary" %></center>
+<% else %>
+
 <center><%= link_to "More Info", new_plan_saved_plan_path(@plan), class: "btn btn-primary" %></center><br />
 
-<%else%>
-<% else %>
-<center><%= link_to "More Info/Save Plan", new_plan_saved_plan_path(@plan), class: "btn btn-primary" %></center><br />
 <% end %>
 <% end %>
 	<center><div id ="up"><i class="up-icon fa fa-chevron-up"></i></div></center>
