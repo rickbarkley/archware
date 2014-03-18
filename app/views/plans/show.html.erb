@@ -208,9 +208,12 @@ $( "#down" ).click(function() {
 
 <% end %>
 
-
+<% if @plan.image3.blank? | @plan.image4.blank? | @plan.image5.blank? %>
+<p></p>
+<% else %>
 	<center><div id ="up"><i class="up-icon fa fa-chevron-up"></i></div></center>
 <center><div id ="down"><i class="down-icon fa fa-chevron-down"></i></div></center>
+<% end %>
 <div id="firstgroup">
 
 <div id="pics">
