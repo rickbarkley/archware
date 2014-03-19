@@ -125,6 +125,8 @@ $( "#filter" ).click(function() {
 						
 						<p><%= f.label :style_eq, "Style" %></p>
     					<p><%= f.select(:style_eq, [['Not Sure', ''],['Hill country', 'Hill country'],[' Hill Country Contemporary', 'Hill Country Contemporary'],['Modern', 'Modern'],['Mediterranean', 'Mediterranean'],['Contemporary', 'Contemporary'],['Traditional/Other', 'Traditional/Other']]) %></p>
+    					<P><%= f.label :featured_eq, "Featured plan" %></p>
+    					<p><%= f.select(:featured_eq, [['No', ''],['Yes', 'Yes']],{ :prompt => "Not Sure"}) %></p>
 
 						<p>
 							<%= f.submit class: "btn btn-primary" %>

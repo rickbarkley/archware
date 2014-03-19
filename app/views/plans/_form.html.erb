@@ -39,21 +39,25 @@
   </div>
       <div class="field">
     <%= f.label :media2, "Plan has a Media Room" %>
-    <%= f.select(:media2, [['Yes', 'Yes']],{ :prompt => "Not Sure"}) %>
+    <%= f.select(:media2, [[''],['Yes', 'Yes']],{ :prompt => "Not Sure"}) %>
     </div>
       <div class="field">
     <%= f.label :quart, "Plan has a Courtyard" %>
-    <%= f.select(:quart, [['Yes', 'Yes']],{ :prompt => "Not Sure"}) %><br /><br /><br />
+    <%= f.select(:quart, [['Yes', 'Yes']],{ :prompt => "Not Sure"}) %>
+    </div>
+    <div class="field">
+    <%= f.label :featured, "Featured plan" %>
+    <%= f.select(:featured, [[''],['Yes', 'Yes']],{ :prompt => "Not Sure"}) %><br /><br /><br />
     </div>
 </div>
 <div id="row-two" class="col-md-3">
   <div class="field">
     <%= f.label :half_bath %><br />
-    <%= f.select(:half_bath, [['1', 1],['2', 2],['3+', 3]],{ :prompt => "Not Sure"}) %>
+    <%= f.select(:half_bath, [[''],['1', 1],['2', 2],['3+', 3]],{ :prompt => "Not Sure"}) %>
   </div>
   <div class="field">
     <%= f.label :living %><br />
-    <%= f.select(:living, [['1', 1], ['2', 2],['3', 3],['4+', 4]],{ :prompt => "Not Sure"}) %>
+    <%= f.select(:living, [[''],['1', 1], ['2', 2],['3', 3],['4+', 4]],{ :prompt => "Not Sure"}) %>
   </div>
   <div class="field">
     <%= f.label :dining %><br />
@@ -69,7 +73,7 @@
   	</div>
       <div class="field">
     <%= f.label :study2, "Plan has a Study" %>
-    <%= f.select(:study2, [['Yes', 'Yes']],{ :prompt => "Not Sure"}) %>
+    <%= f.select(:study2, [[''],['Yes', 'Yes']],{ :prompt => "Not Sure"}) %>
     </div>
       <div class="field">
     <%= f.label :garage_loc, "Garage Location" %>
