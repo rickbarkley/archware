@@ -5,7 +5,7 @@ class PlansController < ApplicationController
   def index
 
     @q = Plan.search(params[:q])
-    @plans = @q.result(distinct: true).paginate(:page => params[:page], :per_page => 10, :order => 'featured')
+    @plans = @q.result(distinct: true).paginate(:page => params[:page], :per_page => 10, :order => 'featured DESC')
     @q.build_sort if @q.sorts.empty?
 
     respond_to do |format|
