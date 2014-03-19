@@ -86,6 +86,56 @@ $('#image4').click(function(e){
 
 
 });
+$('#image7').click(function(e){
+	e.preventDefault();
+		$('#picture').html($('#image7').html());
+		$('#picture').show('slide', {
+			direction: "left"
+
+		}, 2000);
+
+
+});
+$('#image8').click(function(e){
+	e.preventDefault();
+		$('#picture').html($('#image8').html());
+		$('#picture').show('slide', {
+			direction: "left"
+
+		}, 2000);
+
+
+});
+$('#image9').click(function(e){
+	e.preventDefault();
+		$('#picture').html($('#image9').html());
+		$('#picture').show('slide', {
+			direction: "left"
+
+		}, 2000);
+
+
+});
+$('#image10').click(function(e){
+	e.preventDefault();
+		$('#picture').html($('#image10').html());
+		$('#picture').show('slide', {
+			direction: "left"
+
+		}, 2000);
+
+
+});
+$('#image11').click(function(e){
+	e.preventDefault();
+		$('#picture').html($('#image11').html());
+		$('#picture').show('slide', {
+			direction: "left"
+
+		}, 2000);
+
+
+});
 	});
 
 </script>
@@ -254,7 +304,7 @@ $( "#up2" ).click(function() {
 			</div>
 	</div>
 <% end %>
-<% if @plan.image3.blank? | @plan.image4.blank? | @plan.image5.blank? %>
+<% if @plan.image3.blank? %>
 <center><div ><i class="down-max-icon fa fa-chevron-down"></i></div></center>
 <% else %>
 <center><div id ="down"><i class="down-icon fa fa-chevron-down"></i></div></center>
@@ -296,7 +346,7 @@ $( "#up2" ).click(function() {
 			</div>
 	</div>
 <% end %>
-<% if @plan.image8.blank? | @plan.image9.blank? | @plan.image10.blank? %>
+<% if @plan.image8.blank? %>
 <center><div ><i class="down-max-icon fa fa-chevron-down"></i></div></center>
 <% else %>
 <center><div id ="down2"><i class="down-icon fa fa-chevron-down"></i></div></center>
