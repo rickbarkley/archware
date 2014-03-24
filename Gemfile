@@ -26,6 +26,7 @@ gem "jquery-fileupload-rails"
 gem 'fog'
 gem 'acts_as_shopping_cart', :github => 'crowdint/acts_as_shopping_cart', :branch => '0-1-x'
 gem 'simple_form'
+gem 'sitemap_generator'
 
 
 # Gems used only for assets and not required
