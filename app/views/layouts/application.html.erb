@@ -16,6 +16,14 @@
     <!--[if lt IE 9]>
       <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js" type="text/javascript"></script>
     <![endif]-->
+    <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=196998807069297";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
     <%= stylesheet_link_tag "application", :media => "all" %>
 
@@ -69,6 +77,7 @@
     
     <ul class="nav navbar-nav navbar-right">
     <li><a href="//www.pinterest.com/pin/create/button/?url=https%3A%2F%2Fwww.nuvolio.com&media=https%3A%2F%2Fwww.nuvolio.com%2Fassets%2FExterior.jpg&description=Custom%20home%20plans%20from%20award%20winning%20architects.%20%20" data-pin-do="buttonPin" data-pin-config="none" data-pin-height="28"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_28.png" /></a></li>
+    <li><div class="fb-like" data-href="https://www.nuvolio.com" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div></li>
 <!-- Please call pinit.js only once per page -->
 <script type="text/javascript" async src="//assets.pinterest.com/js/pinit.js"></script>
       <li><a href="/contact">Contact</a></li>
@@ -81,6 +90,7 @@
           <%= yield %>
 
     <%= render 'layouts/footer' %>
+
   </body>
 
 
