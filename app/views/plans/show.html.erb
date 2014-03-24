@@ -390,6 +390,9 @@ $( "#up2" ).click(function() {
 <% end %>
 <center><div ><i class="down-max-icon fa fa-chevron-down"></i></div></center>
 <center><%= link_to "Purchase Plan!", new_plan_order_path(@plan), class: "btn btn-primary" %></center>
+<center><a href="//www.pinterest.com/pin/create/button/?url=<%= link_to plan_path(@plan) %>media=<%= image_tag(@plan.elevation.url(:full)) %>&description=Next%20stop%3A%20Pinterest" data-pin-do="buttonPin" data-pin-config="above"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png" /></a></center>
+<!-- Please call pinit.js only once per page -->
+<script type="text/javascript" async src="//assets.pinterest.com/js/pinit.js"></script>
 </div>
 </div>
 
