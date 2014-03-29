@@ -67,7 +67,8 @@
 
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav">
+     <div id="nuvolio_2">
+    <ul class="nav navbar-nav">  
       <li><a href="/plans">View Plans</a></li>
       <% if user_signed_in? %>
       <li><%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %></li>
@@ -75,8 +76,10 @@
       <% else %>
       <li><%= link_to 'Login', new_user_session_path %></li>
       <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+
       <% end %>
     </ul>
+  </div>
     
     <ul class="nav navbar-nav navbar-right">
     <li><a href="//www.pinterest.com/pin/create/button/?url=https%3A%2F%2Fwww.nuvolio.com&media=https%3A%2F%2Fwww.nuvolio.com%2Fassets%2FExterior.jpg&description=Custom%20home%20plans%20from%20award%20winning%20architects.%20%20" data-pin-do="buttonPin" data-pin-config="none" data-pin-height="28"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_28.png" /></a></li>
