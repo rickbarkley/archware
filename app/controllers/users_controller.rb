@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    authorize! :index, @user, :message => 'Not authorized as an administrator.'
+    authorize! @user, :message => 'Not authorized as an administrator.'
     if params[:search]
         @users = User.search(params[:search]).paginate(:page => params[:page], :per_page => 5)       
       else
