@@ -4,6 +4,7 @@ class SavedPlansController < ApplicationController
   # GET /registers
   # GET /registers.json
   def index
+    authorize! @user, :message => 'Not authorized as an administrator.'
    authorize! :index, @user, :message => 'Not authorized as an administrator.'
     @saved_plan = SavedPlan.all
 
