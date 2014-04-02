@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  before_filter :authenticate_user!, :only => [:admin] 
   def home
     
     @q = Plan.search(params[:q])
