@@ -3,6 +3,8 @@ EDesign::Application.routes.draw do
 
   get "message/create"
 
+  get "pages/admin"
+
   resources :saved_plans
 
      resources :orders
@@ -33,6 +35,7 @@ EDesign::Application.routes.draw do
   match '/questions', :to => 'pages#questions'
   match '/contact', :to => 'contact_us/contacts#new'
   match '/cart', :to => 'plans#add_to_cart'
+  match '/admin', :to => 'pages#admin'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

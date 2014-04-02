@@ -1,10 +1,10 @@
 class SavedPlansController < ApplicationController
 
-	#before_filter :authenticate_user! 
+	before_filter :authenticate_user! 
   # GET /registers
   # GET /registers.json
   def index
-   
+   authorize! :index, @user, :message => 'Not authorized as an administrator.'
     @saved_plan = SavedPlan.all
 
     respond_to do |format|
@@ -27,7 +27,7 @@ class SavedPlansController < ApplicationController
   # GET /registers/new
   # GET /registers/new.json
   def new
-
+authorize! :index, @user, :message => 'Not authorized as an administrator.'
     @plan = Plan.find(params[:plan_id])
     @saved_plan = @plan.saved_plans.new
     respond_to do |format|
@@ -56,6 +56,7 @@ class SavedPlansController < ApplicationController
   # DELETE /registers/1
   # DELETE /registers/1.json
   def destroy
+    authorize! :index, @user, :message => 'Not authorized as an administrator.'
     @saved_plan = SavedPlan.find(params[:id])
     @saved_plan.destroy
 
