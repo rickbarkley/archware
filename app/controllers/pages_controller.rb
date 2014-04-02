@@ -21,7 +21,7 @@ class PagesController < ApplicationController
   def questions
   end
   def admin
-    authorize! :index, @user, :message => 'Not authorized as an administrator.'
+    authorize! @user, :message => 'Not authorized as an administrator.'
   end
 
 end
