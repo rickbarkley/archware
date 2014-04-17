@@ -60,11 +60,11 @@ class Plan < ActiveRecord::Base
   :image2, :image3, :image4, :image5, :image7, :image8, :image9, :image10,:image11, :delete_photo, :delete_photo2, :delete_photoe, :featured  
   #attr_accessor :_destroy
   has_attached_file :drawing_1,  :styles => { :full => ["2400x2400>", :jpg], :preview => ["365x365>", :jpg], :thumb => ["150x150>", :jpg] }
-    validates_attachment_content_type :drawing_1, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/pdf"]
+    validates_attachment_content_type :drawing_1, :content_type => ["image/jpg", "image/jpeg", "image/png", "application/pdf"]
   has_attached_file :drawing_2,  :styles => { :full => ["2400x2400>", :jpg], :preview => ["365x365>", :jpg], :thumb => ["150x150>", :jpg] }
-    validates_attachment_content_type :drawing_2, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/pdf"]
+    validates_attachment_content_type :drawing_2, :content_type => ["image/jpg", "image/jpeg", "image/png", "application/pdf"]
   has_attached_file :elevation,  :styles => { :full => ["2400x2400>", :jpg], :preview => ["365x365>", :jpg], :thumb => ["150x150>", :jpg] }
-    validates_attachment_content_type :elevation, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/pdf"]
+    validates_attachment_content_type :elevation, :content_type => ["image/jpg", "image/jpeg", "image/png", "application/pdf"]
   #has_attached_file :image,  :styles => { :full => ["2400x2400>", :jpg], :preview => ["365x365>", :jpg], :thumb => ["150x150>", :jpg] }
 
   has_many :orders, :dependent => :destroy
