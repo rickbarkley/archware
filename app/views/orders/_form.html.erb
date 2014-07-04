@@ -16,13 +16,13 @@
   <% end %>
   <h2>Billing Info</h2>
  <p> <%=label_tag :name %></p>
-  <p><%= f.text_field_tag :name, :required => true %></p>
+  <p><%= f.text_field :name, :required => true %></p>
   <p><%= label_tag :address_1 %></p>
-    <p><%= f.text_field_tag :address_1, :required => true %></p>
+    <p><%= f.text_field :address_1, :required => true %></p>
     <p><%= label_tag :address_2 %></p>
      <p> <%= text_field_tag :address_2 %></p>
       <p><%= label_tag :city %></p>
-      <p>  <%= f.text_field_tag :city, :required => true %></p>
+      <p>  <%= f.text_field :city, :required => true %></p>
       <p><%= label_tag :state2, "State" %></p>
       <p>   <%= f.select(:state2, [  
       ['Alabama', '0'],
@@ -78,7 +78,7 @@
       ['Wisconsin', '50'],
       ['Wyoming', '51']],{ :prompt => "Select State", :required => true}) %> </p>
         <p><%= label_tag :zip %></p>
-       <p>   <%= f.text_field_tag :zip, {:required => true} %></p>
+       <p>   <%= f.text_field :zip, {:required => true} %></p>
 <h2>Contact Info</h2>
  <p> <%=label_tag :email %></p>
   <p><%= text_field_tag :email %></p>
