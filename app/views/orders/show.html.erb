@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<!--<p id="notice"><%#<%= notice %></p> -->
 
 <div class="container">
 	<div class="row">
@@ -8,7 +8,8 @@
   <b>Plan:</b>
   <%= @order.plan.name %>
 </p>
-<p>Please allow 3-4 days for us to print out the architectural drawings and ship them to you.</p>
+
+<p>Please allow 3-4 days for us to get the architectural drawings to you.</p>
 <p>If you have any questions at all please feel free to contact Rick Barkley at <%= mail_to "rick_barkley@nuvola-networks.com", "rick_barkley@nuvola-networks.com" %> or (512) 698-8913.</p>
 	
 <p><%= link_to "Back to Plans", plans_path %></p>	

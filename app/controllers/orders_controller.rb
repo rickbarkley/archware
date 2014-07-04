@@ -26,7 +26,7 @@ class OrdersController < ApplicationController
 
           @order = Order.new(params[:order])
           if @order.save_with_payment
-              redirect_to @order, :notice => "Thank you for your purchase!  Enjoy your Class!"
+              redirect_to @order, :notice => "Thank you for your purchase!"
               else
               render :new
           end

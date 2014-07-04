@@ -23,6 +23,60 @@
      <p> <%= text_field_tag :address_2 %></p>
       <p><%= label_tag :city %></p>
       <p>  <%= text_field_tag :city %></p>
+      <p><%= label_tag :state2, "State" %></p>
+      <p>   <%= f.select(:state2, [  
+      ['Alabama', '0'],
+      ['Alaska', '0'],
+      ['Arizona', '0'],
+      ['Arkansas', '0'],
+      ['California', '0'],
+      ['Colorado', '0'],
+      ['Connecticut', '0'],
+      ['Delaware', '0'],
+      ['District of Columbia', '0'],
+      ['Florida', '10'],
+      ['Georgia', '11'],
+      ['Hawaii', '12'],
+      ['Idaho', '13'],
+      ['Illinois', '14'],
+      ['Indiana', '15'],
+      ['Iowa', '16'],
+      ['Kansas', '17'],
+      ['Kentucky', '18'],
+      ['Louisiana', '19'],
+      ['Maine', '20'],
+      ['Maryland', '21'],
+      ['Massachusetts', '22'],
+      ['Michigan', '23'],
+      ['Minnesota', '24'],
+      ['Mississippi', '25'],
+      ['Missouri', '0'],
+      ['Montana', '26'],
+      ['Nebraska', '27'],
+      ['Nevada', '28'],
+      ['New Hampshire', '29'],
+      ['New Jersey', '30'],
+      ['New Mexico', '31'],
+      ['New York', '32'],
+      ['North Carolina', '33'],
+      ['North Dakota', '34'],
+      ['Ohio', '35'],
+      ['Oklahoma', '36'],
+      ['Oregon', '37'],
+      ['Pennsylvania', '38'],
+      ['Puerto Rico', '39'],
+      ['Rhode Island', '40'],
+      ['South Carolina', '41'],
+      ['South Dakota', '42'],
+      ['Tennessee', '43'],
+      ['Texas', '44'],
+      ['Utah', '45'],
+      ['Vermont', '46'],
+      ['Virginia', '47'],
+      ['Washington', '48'],
+      ['West Virginia', '49'],
+      ['Wisconsin', '50'],
+      ['Wyoming', '51']],{ :prompt => "Select State"}) %> </p>
         <p><%= label_tag :zip %></p>
        <p>   <%= text_field_tag :zip %></p>
 <h2>Contact Info</h2>
@@ -37,7 +91,7 @@
   <p>  <%= text_field_tag :card_number, nil, name: nil %></p>
   </div>
   <div class="field">
-    <P><%= label_tag :card_code, "Security Code on Card (CVV)" %></p>
+    <P><%= label_tag :card_code, "Security Code on Card (CSV)" %></p>
    <p> <%= text_field_tag :card_code, nil, name: nil %></p>
   </div>
   <div class="field">
@@ -49,8 +103,33 @@
 <div id="stripe_error">
   <noscript>JavaScript is not enabled and is required for this form. First enable it in your web browser settings.</noscript>
 </div>
+<div id="taxInfo">
+<div id="texas">
+  <p>Tax: $<%= (@order.plan.price * @order.plan.sqfoot * 0.0825).round(2) %></p>
+</div>
+<div id="none">
+  <p>Tax: $0.00 </p>
+</div>
+  <p>Shiping and Handling: $0.00</p>
+  <p>Total: $<%= (@order.plan.price * @order.plan.sqfoot * 1.0825).round(2) %></p>
+</div>
 <div class="actions">
 	<%= f.submit "Purchase Now", class: "btn btn-large btn-primary" %>
+
 </div>	
 
 <% end %>
+
+<script type="text/javascript">
+  //$(function() {
+    $('#order_state2').change(function(){
+      if ($(this).val() == "44") {
+        document.getElementById("texas").style.display="block";
+        document.getElementById("none").style.display="none";
+      } else {
+        document.getElementById("none").style.display="block";
+        document.getElementById("texas").style.display="none";
+      }
+    });
+ // });
+</script>
