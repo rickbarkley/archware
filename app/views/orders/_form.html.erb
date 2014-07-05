@@ -14,7 +14,7 @@
       </ul>
     </div>
   <% end %>
-  <h2>Billing Info</h2>
+<h2>Billing Info</h2>
  <p> <%=label_tag :name %></p>
   <p><%= f.text_field :name, :required => true %></p>
   <p><%= label_tag :address_1 %></p>
@@ -25,15 +25,15 @@
       <p>  <%= f.text_field :city, :required => true %></p>
       <p><%= label_tag :state2, "State" %></p>
       <p>   <%= f.select(:state2, [  
-      ['Alabama', '0'],
-      ['Alaska', '0'],
-      ['Arizona', '0'],
-      ['Arkansas', '0'],
-      ['California', '0'],
-      ['Colorado', '0'],
-      ['Connecticut', '0'],
-      ['Delaware', '0'],
-      ['District of Columbia', '0'],
+      ['Alabama', '1'],
+      ['Alaska', '2'],
+      ['Arizona', '3'],
+      ['Arkansas', '4'],
+      ['California', '5'],
+      ['Colorado', '6'],
+      ['Connecticut', '7'],
+      ['Delaware', '8'],
+      ['District of Columbia', '9'],
       ['Florida', '10'],
       ['Georgia', '11'],
       ['Hawaii', '12'],
@@ -112,7 +112,12 @@
   <p>Tax: $0.00 </p>
 </div>
   <p>Shiping and Handling: $0.00</p>
-  <p>Total: $<%= (@order.plan.price * @order.plan.sqfoot * 1.0825).round(2) %></p>
+  <div id="texas">
+    <p>Total: $$<%= (@order.plan.price * @order.plan.sqfoot * 1.0825).round(2) %></p>
+  </div>
+  <div id="none">
+    <p>Total: $<%= (@order.plan.price * @order.plan.sqfoot).round(2) %></p>
+  </div>
 </div>
 <div class="actions">
 	<%= f.submit "Purchase Now", class: "btn btn-large btn-primary" %>
