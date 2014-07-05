@@ -112,7 +112,7 @@
   <p>Tax: $0.00 </p>
 </div>
   <p>Shiping and Handling: $0.00</p>
-  <div id="texas">
+  <div id="texas2">
     <p>Total: $$<%= (@order.plan.price * @order.plan.sqfoot * 1.0825).round(2) %></p>
   </div>
   <div id="none">
@@ -131,10 +131,12 @@
     $('#order_state2').change(function(){
       if ($(this).val() == "44") {
         document.getElementById("texas").style.display="block";
+        document.getElementById("texas2").style.display="block";
         document.getElementById("none").style.display="none";
       } else {
         document.getElementById("none").style.display="block";
         document.getElementById("texas").style.display="none";
+        document.getElementById("texas2").style.display="none";
       }
     });
  // });
