@@ -10,7 +10,7 @@
 #
 
 class Order < ActiveRecord::Base
-  attr_accessible :plan_id, :user_id, :stripe_card_token, :plan_cost, :tax, :state2, :name, :address_1, :address_2, :city, :phone, :email
+  attr_accessible :plan_id, :user_id, :stripe_card_token, :plan_cost, :tax, :state2, :name, :address_1, :address_2, :city, :phone, :email, :zip
   attr_accessor :stripe_card_token, :plan_cost
   belongs_to :plan
   belongs_to :user
