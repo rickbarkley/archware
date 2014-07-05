@@ -115,7 +115,7 @@
   <div id="texas2">
     <p>Total: $<%= (@order.plan.price * @order.plan.sqfoot * 1.0825).round(2) %></p>
   </div>
-  <div id="none">
+  <div id="none2">
     <p>Total: $<%= (@order.plan.price * @order.plan.sqfoot).round(2) %></p>
   </div>
 </div>
@@ -133,8 +133,10 @@
         document.getElementById("texas").style.display="block";
         document.getElementById("texas2").style.display="block";
         document.getElementById("none").style.display="none";
+        document.getElementById("none2").style.display="none";
       } else {
         document.getElementById("none").style.display="block";
+        document.getElementById("none2").style.display="block";
         document.getElementById("texas").style.display="none";
         document.getElementById("texas2").style.display="none";
       }
